@@ -1,0 +1,66 @@
+.RentalObject-Details-Image{
+    width: 100%;
+    height: 242px;
+    object-fit: cover;
+}
+.Reservation-Info-Area{
+    height: 115px;
+    /* border: 1px solid; */
+}
+
+.RentalObjectPackage{
+    /* margin: 0 auto; */
+    padding-left: 35px;
+    /* border: 1px solid; */
+    display: flex;
+}
+
+.RentalObjectPackage-ListItem{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+li::marker {
+    color: #396A3C;     
+    font-size: 24px;
+    
+  }
+
+.ObjectListingDetails-Facilities-Container{
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    width: 342px;
+    /* border: 1px solid; */
+  }
+
+ .ObjectListingDetails-Facilities-Content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px; /* Adjust the gap according to your design */
+    /* border: solid 2px gold; */
+    
+ } 
+ .ObjectListingDetails-Facilities-Content p{
+    font-size: 12px;
+    font-family: Lora;
+ } 
+
+ /* .ObjectListingDetails-Facilities-Content img{
+    padding: 5px;
+ } */
+
+ .ObjectListingDetails-Text-And-Icons{
+    display: flex;
+    /* border: 1px solid; */
+    align-items: center;
+    /* justify-content: space-around; */
+ }
+ .Facility-Icon{
+    /* border: 1px solid; */
+    height: 27px;
+    width: 27px;
+ }
+
+ .ObjectListingDetails-Facilities-Text{
+    margin-left: 5%;
+ }

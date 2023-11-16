@@ -1,0 +1,16 @@
+.Navbar{
+    background-color: var(--global-color-1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+.Navbar-Logo{
+    width: 148px;
+    /* border: 2px solid; */
+}
+.Navbar-Menu{
+    width: 23px;
+    margin-right: 25px;
+}

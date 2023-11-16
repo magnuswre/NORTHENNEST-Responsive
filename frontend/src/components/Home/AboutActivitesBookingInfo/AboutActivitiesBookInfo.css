@@ -1,0 +1,22 @@
+#Home-About-Container, #Home-Activites-Container{
+    border-bottom: 1px solid #D1D1D1;
+}
+
+.Home-AboutActivitiesBookInfo-Content {
+    font-family: Lora;
+    margin: 0 auto;
+    margin-top: 25px;
+    display: grid;
+    place-items: center;
+    width: 298px;
+}
+
+.Home-AboutActivitiesBookInfos-Title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.Home-AboutActivitiesBookInfo {
+    display: grid;
+    place-items: center;
+}

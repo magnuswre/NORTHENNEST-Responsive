@@ -1,0 +1,55 @@
+.form-container{
+    margin: 0 auto;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid; */
+    width: 350px;
+    background-color: #F0F0F0;
+    font-family: Lora;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+
+form{
+    margin: 8px;
+}
+.form-container input{
+    border-radius: 10px;
+    border: none;
+    background-color: #E5E5E5;
+    outline: none;
+    height: 21px;
+} 
+
+
+
+.error-text{
+    color: red;
+}
+
+/* h4{
+    padding: 0.8%;
+} */
+.visaMastercard, .Klarna, .PayPal, .AmericanExpress{
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+
+}
+
+#visaMastercard, #Klarna, #PayPal, #AmericanExpress{
+    margin-left: 5%;
+
+}
+
+.Confirm-Booking-Btn-Container{
+    display: grid;
+    place-items: center;
+    padding: 5%;
+    
+}
+
+.Confirm-Booking-Btn{
+    font-family: Lora;
+}

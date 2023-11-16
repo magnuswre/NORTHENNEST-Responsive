@@ -1,0 +1,10 @@
+.Home-Heading4{
+    margin: 0 auto;
+    margin-top: 25px;
+    display: flex;
+    text-align: center;
+    height: 81px;
+    padding: 27px 0px 37px 0px;
+    justify-content: center;
+    align-items: center;
+}

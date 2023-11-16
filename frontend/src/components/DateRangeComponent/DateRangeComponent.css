@@ -1,0 +1,76 @@
+.calendarWrap{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 63px;
+    margin-top: 14px;
+}
+
+.CalenderInputAndLabel-Content{
+    border-bottom: 1px solid #D1D1D1;
+    border-top: 1px solid #D1D1D1;
+    /* border-right: 1px solid; */
+}
+.CalenderInputAndLabel{
+    margin: 0 auto;
+    width: 323px;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.inputBoxCheckIn-container, .inputBoxCheckOut-container{
+    display: flex;
+    padding: 1%;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    border: none;
+    
+}
+.inputBoxCheckIn-container{
+    border-right: 1px solid #D1D1D1;
+}
+
+.Empty-Div-With-Border{
+    border: 1px solid;
+    /* height: 100%; */
+}
+
+.inputBoxes-InputAndBtn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* .inputBoxCheckIn-container{
+    border-right: 1px solid #D1D1D1;
+} */
+
+#inputBoxCheckIn, #inputBoxCheckOut{
+    width: 88px;
+    height: 23px;
+    border: none;
+    color:  #A0A0A0;
+    width: 50%;
+    outline: none;
+}
+
+.calendarElement{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 60px;
+    border: 1px solid #ccc;
+    z-index: 999;
+} 
+
+.rdrDateDisplay{
+    display: none !important;
+}
+
+.rdrMonthName{
+    display: none !important;
+}

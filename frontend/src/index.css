@@ -1,0 +1,24 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
+.root{
+  /* border: 2px solid; */
+  display: flex;
+  justify-content: center;
+  /* color: #486349;
+  color: #CBB26A;
+  color: #F7F7F7; */
+  --global-color-1:#486349;
+  --global-color-2: #CBB26A;
+  --global-color-3:#F7F7F7;
+  background-color: black;
+}
+
+.Master-Container{
+   background-color: white;
+}
+
+

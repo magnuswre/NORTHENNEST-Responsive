@@ -1,0 +1,44 @@
+.PaymentConfirmation-Container{
+    margin: 0 auto;
+    width: 350px;
+    background-color: #F0F0F0;
+    text-align: center;
+    margin-bottom: 35px;
+    border-radius: 10px;
+    font-family: Lora;
+}
+
+.Bold{
+    font-weight: 700;
+}
+
+.PaymentConfirmation-Content{
+    display: grid;
+    place-items: center;
+    margin-top: 5%;
+
+}
+
+.PaymentConfirmation-top-field{
+    border-radius: 10px 10px 0 0;
+    height: 35px;
+    background-color: #486349;
+    margin-top: 35px;
+}
+
+.PaymentConfirmation-Checkicon{
+    margin-bottom: 5%;
+}
+
+.PaymentConfirmation-Amount-Container, .PaymentConfirmation-Booking-Reference-Container, .PaymentConfirmation-Email-Container{
+    display: flex;
+    /* flex-direction: column; */
+    display: inline-block;
+    width: 100%;
+    margin-top: 4%;
+    /* border: 1px solid; */
+}
+
+.PaymentConfirmation-Email-Container{
+    margin-bottom: 5%;
+}

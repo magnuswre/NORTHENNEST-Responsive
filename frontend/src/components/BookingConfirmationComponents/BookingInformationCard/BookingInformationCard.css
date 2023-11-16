@@ -1,0 +1,44 @@
+.BookinginformationCard-Container{
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 350px;
+    /* height: 452px; */
+    /* border: 1px solid; */
+   background-color: #F0F0F0;
+   font-family: Lora;
+   border-radius: 10px;
+   display: grid;
+   
+}
+
+
+.BookinginformationCard-Content{
+    display: grid;
+    margin: 8px
+}
+
+.Booking-information-Title{
+    background-color: #486349;
+    color: white;
+    height: 35px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    
+}
+
+.Booking-information-Title-Value{
+    margin-left: 8px;
+}
+
+#Total-Cost-Border-Top{
+    border-top: solid 1px;
+    margin-top: 7% ;
+   
+}
+
+.Cancellation-Protection-Content{
+    display: flex;
+    /* justify-content: space-around; */
+}

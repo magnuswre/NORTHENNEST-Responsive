@@ -1,0 +1,15 @@
+.Confirm-Booking-Btn-Container{
+    display: grid;
+    place-items: center;
+}
+
+
+.Confirm-Booking-Btn{
+    display: inline-flex;
+    padding: 11px 16px 12px 13px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: #D8C690;
+    border: none;
+}

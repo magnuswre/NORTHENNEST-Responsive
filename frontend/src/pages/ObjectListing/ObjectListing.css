@@ -1,0 +1,108 @@
+.Bold-Text{
+  font-weight: 700;
+}
+
+.Rental-Object-Listing{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid; */
+}
+
+.Rental-Object-Listing-Details{
+    margin: 0 auto;
+    border-radius: 10px 10px 0px 0px;
+    background: lightgray 50% / cover no-repeat;
+    width: 330px;
+    height: 330px;
+    flex-shrink: 0;
+    fill: #FFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-top: 30px;
+    position: relative;
+}
+
+.RentalObject-Image{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+
+}
+
+.RentalObject-Price{
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 52%;
+    left: 2%;
+    background-color: #FFFFFF;
+    width: 160px;
+    height: 30px;
+    border-radius: 15px;
+    fill: #FFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.RentalObject-Category{
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 42%;
+    left: 2%;
+    background-color: #FFFFFF;
+    width: 70px;
+    height: 25px;
+    border-radius: 15px;
+    fill: #FFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
+.RentalObject-Bottom-Content{
+    margin-top: 35px;
+    margin-left: 2%;
+}
+
+.RentalObject-Bottom-Living-Bedroom{
+    display: flex;
+    margin-top: 12px;
+}
+
+
+
+.RentalObject-Starrating-ViewBtn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8px;
+    /* border: 1px solid; */
+}
+
+.RentalObject-Starrating-Container{
+    display: flex;
+    /* border: 1px solid; */
+    
+    /* align-items: center; */
+
+}
+.RentalObject-Starrating-Container p{
+    margin: auto 5px auto 0
+} 
+
+.RentalObject-Save-Btn{
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.RentalObject-View-Deal-Btn{
+   width: 120px;
+   height: 40px;
+   border-radius: 15px;
+   border: none;
+   flex-shrink: 0;
+   background-color: #D8C690;
+}
