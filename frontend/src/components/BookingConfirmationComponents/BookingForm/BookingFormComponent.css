@@ -11,15 +11,20 @@
     margin-bottom: 5%;
 }
 
-form{
+.Form-Wrapper{
     margin: 8px;
 }
+
+.Form-Wrapper > * {
+    margin-bottom: 10px;
+} 
 .form-container input{
     border-radius: 10px;
     border: none;
     background-color: #E5E5E5;
     outline: none;
     height: 21px;
+    text-indent: 5px;
 } 
 
 
@@ -47,9 +52,90 @@ form{
     display: grid;
     place-items: center;
     padding: 5%;
-    
 }
 
 .Confirm-Booking-Btn{
+    display: inline-flex;
+    padding: 11px 16px 12px 13px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: #D8C690;
+    border: none;
     font-family: Lora;
+}
+
+/* DESKTOP */
+
+.form-container-Desktop{
+    font-family: Lora;
+    margin: 0 auto;
+    width: 90%;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+}
+
+.Form-Wrapper-Desktop{
+    display: grid;
+    margin: 8px;
+    /* border: 1px solid; */
+    /* grid-template-columns: repeat(2, 1fr); */
+    
+}
+.Form-YOLO{
+    display: grid;
+     grid-template-columns: repeat(2, 1fr);
+    /* align-items: center;
+
+    justify-content: space-between; */
+    
+}
+
+ .Form-Content-Desktop > *, .Payment-Methods-Desktop > *{
+     /* border: 2px solid gold;  */
+     margin-top: 10px;
+} 
+
+.form-container-Desktop input{
+    width: 50%;
+    border-radius: 10px;
+    border: none;
+    background-color: #E5E5E5;
+    outline: none;
+    height: 25px;
+    text-indent: 5px;
+    font-size: 16px;
+} 
+
+.Payment-Methods-Desktop input[type="radio"]{
+    width: 3%;
+}
+
+.Confirm-Booking-Btn-Container-Desktop{
+    display: grid;
+    place-items: center;
+    padding: 1%;
+    /* border: 2px solid; */
+}
+
+.Confirm-Booking-Btn-Desktop{
+    display: inline-flex;
+    padding: 11px 16px 12px 13px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: #D8C690;
+    border: none;
+    font-family: Lora;
+}
+
+.form-container-Desktop input::placeholder {
+    color: #555; /* Set the desired color for the placeholder text */
+    font-style: italic; /* Optionally set the font style for the placeholder text */
+    font-size: 16px;
+
+}
+
+.Payment-Methods-Container-Desktop{
+    display: grid;
 }

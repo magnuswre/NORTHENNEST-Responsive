@@ -5,6 +5,8 @@ import { checkIfEmpty } from './Validation';
 import { useState } from 'react';
 import { createOrder } from '../../../features/order/orderSlice';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+
 
 import visamastercardImage from '../../../assets/visamastercard.png';
 import klarnaImage from '../../../assets/klarna.png';
@@ -23,7 +25,7 @@ const initState = {
 };
 
 const BookingFormComponent = () => {
-
+  const isMobile = useMediaQuery({ maxWidth: 1000 });
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const { id } = useParams<{ id: string }>();
@@ -134,129 +136,264 @@ const BookingFormComponent = () => {
   };
 
 
-  return (
-    <div className='form-container'>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="fullName"><h4> Full Name:</h4> </label>
-          <input type="text" name="fullName" className="input" id="fullName" value={formData.fullName} onChange={handleChangeInput} />
-          <p className="error-text">{error.fullName}</p>
-        </div>
+  return (<div>
+    {isMobile ?
+      <div className='form-container'>
+        <form className='Form-Wrapper' onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="fullName"><h3> Full Name:</h3> </label>
+            <input type="text" name="fullName" className="input" id="fullName" value={formData.fullName} onChange={handleChangeInput} />
+            <p className="error-text">{error.fullName}</p>
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="email"><h4> Email:</h4> </label>
-          <input type="text" name="email" className="input" id="email" value={formData.email} onChange={handleChangeInput} />
-          <p className="error-text">{error.email}</p>
-        </div>
+          <div className="form-group">
+            <label htmlFor="email"><h3> Email:</h3> </label>
+            <input type="text" name="email" className="input" id="email" value={formData.email} onChange={handleChangeInput} />
+            <p className="error-text">{error.email}</p>
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="phoneNumber"><h4>Phone Number:</h4> </label>
-          <input type="number" name="phoneNumber" className="input" id="phoneNumber" value={formData.phoneNumber} onChange={handleChangeInput} />
-          <p className="error-text">{error.phoneNumber}</p>
-        </div>
+          <div className="form-group">
+            <label htmlFor="phoneNumber"><h3>Phone Number:</h3> </label>
+            <input type="number" name="phoneNumber" className="input" id="phoneNumber" value={formData.phoneNumber} onChange={handleChangeInput} />
+            <p className="error-text">{error.phoneNumber}</p>
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="streetAddress"><h4>Address:</h4> </label>
-          <input
-            type="text"
-            name="streetAddress"
-            className="input"
-            id="streetAddress"
-            value={formData.streetAddress}
-            onChange={handleChangeInput}
-            placeholder="Street address"
-          />
-          <p className="error-text">{error.streetAddress}</p>
-        </div>
+          <div className="form-group">
+            <label htmlFor="streetAddress"><h3>Address:</h3> </label>
+            <input
+              type="text"
+              name="streetAddress"
+              className="input"
+              id="streetAddress"
+              value={formData.streetAddress}
+              onChange={handleChangeInput}
+              placeholder="Street address"
+            />
+            <p className="error-text">{error.streetAddress}</p>
+          </div>
 
-        <div className="form-group">
-          {/* <label htmlFor="stateProvince"></label> */}
-          <input
-            type="text"
-            name="stateProvince"
-            className="input"
-            id="stateProvince"
-            value={formData.stateProvince}
-            onChange={handleChangeInput}
-            placeholder="State or province"
-          />
-          <p className="error-text">{error.stateProvince}</p>
-        </div>
+          <div className="form-group">
+            {/* <label htmlFor="stateProvince"></label> */}
+            <input
+              type="text"
+              name="stateProvince"
+              className="input"
+              id="stateProvince"
+              value={formData.stateProvince}
+              onChange={handleChangeInput}
+              placeholder="State or province"
+            />
+            <p className="error-text">{error.stateProvince}</p>
+          </div>
 
-        <div className="form-group">
-          {/* <label htmlFor="city"></label> */}
-          <input
-            type="text"
-            name="city"
-            className="input"
-            id="city"
-            value={formData.city}
-            onChange={handleChangeInput}
-            placeholder="City"
-          />
-          <p className="error-text">{error.city}</p>
-        </div>
+          <div className="form-group">
+            {/* <label htmlFor="city"></label> */}
+            <input
+              type="text"
+              name="city"
+              className="input"
+              id="city"
+              value={formData.city}
+              onChange={handleChangeInput}
+              placeholder="City"
+            />
+            <p className="error-text">{error.city}</p>
+          </div>
 
 
-        <div className='Payment-Methods'>
-          <h4>Payment Methods:</h4>
-          <div className='Payment-Methods-Container'>
-            <div className='visaMastercard'>
-              <img src={visamastercardImage} alt="" />
-              <input
-                type="radio"
-                name="paymentMethod"
-                id="visaMastercard"
-                value="visa/mastercard"
-                checked={formData.paymentMethod === "visa/mastercard"}
-                onChange={handleChangeInput}
+          <div className='Payment-Methods'>
+            <h3>Payment Methods:</h3>
+            <div className='Payment-Methods-Container'>
+              <div className='visaMastercard'>
+                <img src={visamastercardImage} alt="" />
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id="visaMastercard"
+                  value="visa/mastercard"
+                  checked={formData.paymentMethod === "visa/mastercard"}
+                  onChange={handleChangeInput}
 
-              />
-            </div>
-            <div className='Klarna'>
-              <img src={klarnaImage} alt="" />
-              <input
-                type="radio"
-                name="paymentMethod"
-                id="Klarna"
-                value="Klarna"
-                checked={formData.paymentMethod === "Klarna"}
-                onChange={handleChangeInput}
-              />
-            </div>
-            <div className='PayPal'>
-              <img src={paypalImage} alt="" />
-              <input
-                type="radio"
-                name="paymentMethod"
-                id="PayPal"
-                value="PayPal"
-                checked={formData.paymentMethod === "PayPal"}
-                onChange={handleChangeInput}
-              />
-            </div>
+                />
+              </div>
+              <div className='Klarna'>
+                <img src={klarnaImage} alt="" />
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id="Klarna"
+                  value="Klarna"
+                  checked={formData.paymentMethod === "Klarna"}
+                  onChange={handleChangeInput}
+                />
+              </div>
+              <div className='PayPal'>
+                <img src={paypalImage} alt="" />
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id="PayPal"
+                  value="PayPal"
+                  checked={formData.paymentMethod === "PayPal"}
+                  onChange={handleChangeInput}
+                />
+              </div>
 
-            <div className='AmericanExpress'>
-              <img src={americanExpressImage} alt="" />
-              <input
-                type="radio"
-                name="paymentMethod"
-                id="AmericanExpress"
-                value="American Express"
-                checked={formData.paymentMethod === "American Express"}
-                onChange={handleChangeInput}
-              />
+              <div className='AmericanExpress'>
+                <img src={americanExpressImage} alt="" />
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id="AmericanExpress"
+                  value="American Express"
+                  checked={formData.paymentMethod === "American Express"}
+                  onChange={handleChangeInput}
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div className='Confirm-Booking-Btn-Container'>
-          <button className="Confirm-Booking-Btn">Confirm Booking</button>
-        </div>
+          <div className='Confirm-Booking-Btn-Container'>
+            <button className="Confirm-Booking-Btn">Confirm Booking</button>
+          </div>
 
-      </form>
+        </form>
 
 
-    </div>
+      </div>
+      :
+// DESKTOP ------------------//
+
+      <div className='form-container-Desktop'>
+        <form className='Form-Wrapper-Desktop' onSubmit={handleSubmit}>
+          <div className='Form-YOLO'>
+          <div className='Form-Content-Desktop'>
+            <div className="form-group">
+              <label htmlFor="fullName"><h3> Full Name:</h3> </label>
+              <input type="text" name="fullName" className="input" id="fullName" value={formData.fullName} onChange={handleChangeInput} />
+              <p className="error-text">{error.fullName}</p>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email"><h3> Email:</h3> </label>
+              <input type="text" name="email" className="input" id="email" value={formData.email} onChange={handleChangeInput} />
+              <p className="error-text">{error.email}</p>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="phoneNumber"><h3>Phone Number:</h3> </label>
+              <input type="number" name="phoneNumber" className="input" id="phoneNumber" value={formData.phoneNumber} onChange={handleChangeInput} />
+              <p className="error-text">{error.phoneNumber}</p>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="streetAddress"><h3>Address:</h3> </label>
+              <input
+                type="text"
+                name="streetAddress"
+                className="input"
+                id="streetAddress"
+                value={formData.streetAddress}
+                onChange={handleChangeInput}
+                placeholder="Street address"
+              />
+              <p className="error-text">{error.streetAddress}</p>
+            </div>
+
+            <div className="form-group">
+              {/* <label htmlFor="stateProvince"></label> */}
+              <input
+                type="text"
+                name="stateProvince"
+                className="input"
+                id="stateProvince"
+                value={formData.stateProvince}
+                onChange={handleChangeInput}
+                placeholder="State or province"
+              />
+              <p className="error-text">{error.stateProvince}</p>
+            </div>
+
+            <div className="form-group">
+              {/* <label htmlFor="city"></label> */}
+              <input
+                type="text"
+                name="city"
+                className="input"
+                id="city"
+                value={formData.city}
+                onChange={handleChangeInput}
+                placeholder="City"
+              />
+              <p className="error-text">{error.city}</p>
+            </div>
+          </div>
+
+
+          <div className='Payment-Methods-Desktop'>
+            <h3>Payment Methods:</h3>
+            <div className='Payment-Methods-Container-Desktop'>
+              <div className='visaMastercard'>
+                <img src={visamastercardImage} alt="" />
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id="visaMastercard"
+                  value="visa/mastercard"
+                  checked={formData.paymentMethod === "visa/mastercard"}
+                  onChange={handleChangeInput}
+
+                />
+              </div>
+              <div className='Klarna'>
+                <img src={klarnaImage} alt="" />
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id="Klarna"
+                  value="Klarna"
+                  checked={formData.paymentMethod === "Klarna"}
+                  onChange={handleChangeInput}
+                />
+              </div>
+              <div className='PayPal'>
+                <img src={paypalImage} alt="" />
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id="PayPal"
+                  value="PayPal"
+                  checked={formData.paymentMethod === "PayPal"}
+                  onChange={handleChangeInput}
+                />
+              </div>
+
+              <div className='AmericanExpress'>
+                <img src={americanExpressImage} alt="" />
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id="AmericanExpress"
+                  value="American Express"
+                  checked={formData.paymentMethod === "American Express"}
+                  onChange={handleChangeInput}
+                />
+              </div>
+            </div>
+          </div>
+          </div>
+          <div className='Confirm-Booking-Btn-Container-Desktop'>
+            <button className="Confirm-Booking-Btn-Desktop">Confirm Booking</button>
+          </div>
+
+        </form>
+
+
+      </div>
+
+
+    }
+
+  </div>
   )
 }
 

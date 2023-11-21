@@ -108,7 +108,6 @@ const DateRangeComponent = () => {
             <div className='inputBoxCheckIn-Label'>
               <label htmlFor="inputBoxCheckIn">Check in</label>
             </div>
-
             <div className='inputBoxes-InputAndBtn'>
               <div>
                 <input

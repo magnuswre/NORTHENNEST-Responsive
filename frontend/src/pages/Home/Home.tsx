@@ -9,28 +9,53 @@ import ActivitiesFeatures from '../../components/Home/AboutActivitesBookingInfo/
 import BookingConfirmationComponent from '../../components/Home/AboutActivitesBookingInfo/BookingConfirmationComponent/BookingConfirmationComponent'
 import Heading4 from '../../components/Home/Heading4/Heading4'
 import { MobileCarousel } from '../../components/Home/MobileCarousel/MobileCarousel'
+import { useMediaQuery } from 'react-responsive';
+
 // import StarRating from '../../components/StarRating/StarRating'
 
 const Home = () => {
+  const isMobile = useMediaQuery({ maxWidth: 1000 });
+
   return (
-    <div className='Home-Homepage'>
-        <HeroSearch />
-        <Heading2 />
-        <div className='Home-Package-Cards'>
-          <PackageCard />
+    <div>
+      {isMobile ? (
+      <>
+        <HeroSearch /> 
+        <div className='Home-Homepage'>
+          <Heading2 />
+          <div className='Home-Package-Cards'>
+            <PackageCard />
+          </div>
+          <div className='Home-About-Activities-Booking'>
+            <AboutOurCabins />
+            <ActivitiesFeatures />
+            <BookingConfirmationComponent />
+          </div>
+          <Explore />
+          <MobileCarousel />
+          <Heading4 />
+          <ReviewTestimonialCard />
         </div>
-        <div className='Home-About-Activities-Booking'>
-          <AboutOurCabins />
-          <ActivitiesFeatures />
-          <BookingConfirmationComponent />
+        </>
+      ) : (
+        <div className='Home-Homepage'>
+          <Heading2 />
+          <div className='Home-Package-Cards'>
+            <PackageCard />
+          </div>
+          <div className='Home-About-Activities-Booking'>
+            <AboutOurCabins />
+            <ActivitiesFeatures />
+            <BookingConfirmationComponent />
+          </div>
+          <Explore />
+          <MobileCarousel />
+          <Heading4 />
+          <ReviewTestimonialCard />
         </div>
-        <Explore />
-        <MobileCarousel />
-        <Heading4 />
-        <ReviewTestimonialCard />
-
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

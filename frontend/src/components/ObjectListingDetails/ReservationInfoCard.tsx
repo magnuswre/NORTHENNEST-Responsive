@@ -2,14 +2,16 @@
 import './ReservationCard.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import personIcon from '../../assets/reservationinfocardsymbol.svg'
+import { useMediaQuery } from 'react-responsive';
+
 
 const ReservationInfoCard = () => {
+  const isMobile = useMediaQuery({ maxWidth: 1000 });
   const checkInDate = localStorage.getItem('checkIn');
   const checkOutDate = localStorage.getItem('checkOut');
   const rentalObjectPricePerNight = localStorage.getItem('pricePerNight');
   console.log('Retrieved pricePerNight from localStorage:', rentalObjectPricePerNight);
 
-  // Calculate the total cost based on the number of nights and the price per night
   const checkIn = checkInDate ? new Date(checkInDate) : null;
   const checkOut = checkOutDate ? new Date(checkOutDate) : null;
   const numberOfNights: number = checkIn && checkOut ? Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24)) : 0;
@@ -27,21 +29,45 @@ const ReservationInfoCard = () => {
 
 
   return (
-    <div className="ReservationInfoCard-Container">
-      <div className="ReservationInfoCard-Details">
-        <p className='smalltext'>1 bedroom 2x<span><img src={personIcon} alt="" /></span></p>
-        <p className='smalltext'>Check in: {checkInDate || 'Not selected'}</p>
-        <p className='smalltext'>Check out: {checkOutDate || 'Not selected'}</p> 
-      </div>
-      
-      <div className="ReservationInfoCard-Price-Btn">
-        <div>
-          <p className="ReservationInfoCard-Price">{totalCost} SEK</p>
+    <div>
+      {isMobile ?
+        <div className="ReservationInfoCard-Container">
+          <div className="ReservationInfoCard-Details">
+            <p className='smalltext'>1 bedroom 2x&nbsp;&nbsp;<span><img src={personIcon} alt="" /></span></p>
+            <p className='smalltext'>Check in: {checkInDate || 'Not selected'}</p>
+            <p className='smalltext'>Check out: {checkOutDate || 'Not selected'}</p>
+          </div>
+
+          <div className="ReservationInfoCard-Price-Btn">
+            <div>
+              <p className="ReservationInfoCard-Price">{totalCost} SEK</p>
+            </div>
+            <button className="ReservationInfoCard-Btn" onClick={handleReserveClick}>Reserve</button>
+          </div>
         </div>
-        {/* <Link to="/login">Already Have an Account? 
-        </Link> */}
-        <button className="ReservationInfoCard-Btn" onClick={handleReserveClick}>Reserve</button>
-      </div>
+        :
+// DESKTOP-------------//
+        <div className="ReservationInfoCard-Container-Desktop">
+          <div className="ReservationInfoCard-Wrapper-Desktop">
+          <div className="ReservationInfoCard-Details-Desktop">
+            <p className='smalltext-Desktop'>1 bedroom </p>
+            <p className='smalltext-Desktop'>Check in: {checkInDate || 'Not selected'}</p>
+          </div>
+          <div className='ReservationInfoCard-Details-Desktop'>
+          <p>2x&nbsp;<span><img src={personIcon} alt="" /></span></p>
+
+            <p className='smalltext-Desktop'>Check out: {checkOutDate || 'Not selected'}</p>
+          </div>
+
+          <div className="ReservationInfoCard-Price-Desktop">
+            <p>TOTAL:</p>
+            <p className="ReservationInfoCard-Price-Desktop">{totalCost} SEK</p>
+          </div>
+          <button className="ReservationInfoCard-Btn-Desktop" onClick={handleReserveClick}>Reserve</button>
+        </div>
+        </div>
+        }
+
     </div>
   );
 }

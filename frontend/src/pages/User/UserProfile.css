@@ -1,0 +1,48 @@
+.User-Profile-Data{
+    /* border: 2px solid; */
+    /* height: 35px; */
+    width: 90%;
+    margin: 0 auto;
+    font-family: Lora;
+    background-color: #F0F0F0;
+    margin-top: 15px;
+    border-radius: 10px;
+    /* height: 30vh; */
+    display: grid;
+}
+/* .User-Profile-Data p{
+    margin-left: 8px;
+    margin-top: 10px;
+    /* border-radius: 10px ; 
+}  */
+/* .User-Profile-Data-Phone{
+    margin-bottom: 10px;
+} */
+
+.User-Profile-Data-Title{
+    border-radius: 10px 10px 0 0;
+    background-color: #486349;
+    color: white;
+    display: grid;
+    place-items: center;
+}
+
+.User-Profile-Data-Title-Details  {
+    margin-left: 8px;
+    /* border: 1px solid; */
+    display: grid;
+    place-items: center;
+} 
+
+.User-Profile-Data-Container{
+    display: grid;
+    /* border: 1px solid; */
+    border-radius: 0 0 10px 10px;
+    margin-left: 8px;
+
+
+}
+
+.User-Profile-Data-Container > * {
+    margin-bottom: 8px;
+}

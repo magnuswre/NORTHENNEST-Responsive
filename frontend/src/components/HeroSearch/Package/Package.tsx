@@ -1,10 +1,13 @@
-import chevronBottom from '../../../assets/chevron bottom.svg';
+import magnifyingglass from '../../../assets/🦆 icon _magnifying glass_.svg';
 import './Package.css';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { useState, useEffect, useRef } from 'react';
+import { useMediaQuery } from 'react-responsive';
+
 
 const Package = () => {
+  const isMobile = useMediaQuery({ maxWidth: 1000 });
   const [open, setOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState('All'); // Initialize with 'All'
   const [inputValues, setInputValues] = useState({
@@ -67,18 +70,32 @@ const Package = () => {
       <div ref={refOne} className='Drop-Down-Packages-Content-Wrapper'>
         {open && (
           <>
-          <div className='Drop-Down-Packages-Content'>
-            <p className='Drop-Down-Packages-Item Packages-Item-Border' onClick={() => handlePackageSelect('All')}>All</p>
-            <p className='Drop-Down-Packages-Item Packages-Item-Border' onClick={() => handlePackageSelect('Budget')}>Budget</p>
-            <p className='Drop-Down-Packages-Item Packages-Item-Border' onClick={() => handlePackageSelect('Standard')}>Standard</p>
-            <p className='Drop-Down-Packages-Item' onClick={() => handlePackageSelect('Deluxe')}>Deluxe</p>
+            <div className='Drop-Down-Packages-Content'>
+              <p className='Drop-Down-Packages-Item Packages-Item-Border' onClick={() => handlePackageSelect('All')}>All</p>
+              <p className='Drop-Down-Packages-Item Packages-Item-Border' onClick={() => handlePackageSelect('Budget')}>Budget</p>
+              <p className='Drop-Down-Packages-Item Packages-Item-Border' onClick={() => handlePackageSelect('Standard')}>Standard</p>
+              <p className='Drop-Down-Packages-Item' onClick={() => handlePackageSelect('Deluxe')}>Deluxe</p>
             </div>
           </>
         )}
       </div>
-      <div className='Hero-Home-Search-Btn-Container'>
-        <button className='Hero-Home-Search-Btn' onClick={handleSearch}>SEARCH</button>
+      <div>
+
+        {isMobile ? 
+        <div className='Hero-Home-Search-Btn-Container'>
+          <button className='Hero-Home-Search-Btn' onClick={handleSearch}>SEARCH</button>
+        </div> :
+          
+            <div>
+              <button className='magnifyingglass'
+                onClick={handleSearch}>
+                <img src={magnifyingglass}  alt="" id='magnifyingglass' />
+              </button>
+            </div>
+          
+        }
       </div>
+
     </div>
   );
 };

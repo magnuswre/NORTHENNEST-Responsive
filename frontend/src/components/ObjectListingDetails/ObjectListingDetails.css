@@ -1,66 +1,147 @@
-.RentalObject-Details-Image{
-    width: 100%;
-    height: 242px;
-    object-fit: cover;
-}
-.Reservation-Info-Area{
-    height: 115px;
-    /* border: 1px solid; */
+.RentalObject-Details-Image {
+   width: 100%;
+   height: 242px;
+   object-fit: cover;
 }
 
-.RentalObjectPackage{
-    /* margin: 0 auto; */
-    padding-left: 35px;
-    /* border: 1px solid; */
-    display: flex;
+.Reservation-Info-Area {
+   height: 115px;
+   /* border: 1px solid; */
 }
 
-.RentalObjectPackage-ListItem{
-    margin-top: 5px;
-    margin-bottom: 10px;
+.Reservation-Info-Area-Title{
+   font-family: Lora;
 }
+
+.RentalObjectPackage {
+   /* margin: 0 auto; */
+   padding-left: 35px;
+   /* border: 1px solid; */
+   display: flex;
+   font-family: Lora;
+}
+
+.RentalObjectPackage-ListItem {
+   margin-top: 5px;
+   margin-bottom: 10px;
+}
+
 li::marker {
-    color: #396A3C;     
-    font-size: 24px;
-    
-  }
+   color: #396A3C;
+   font-size: 24px;
+}
 
-.ObjectListingDetails-Facilities-Container{
-    margin: 0 auto;
-    display: grid;
-    place-items: center;
-    width: 342px;
-    /* border: 1px solid; */
-  }
+.ObjectListingDetails-Facilities-Container {
+   margin: 0 auto;
+   display: grid;
+   place-items: center;
+   width: 342px;
+   /* border: 1px solid; */
+   font-family: Lora;
 
- .ObjectListingDetails-Facilities-Content{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px; /* Adjust the gap according to your design */
-    /* border: solid 2px gold; */
-    
- } 
- .ObjectListingDetails-Facilities-Content p{
-    font-size: 12px;
-    font-family: Lora;
- } 
+}
 
- /* .ObjectListingDetails-Facilities-Content img{
+.ObjectListingDetails-Facilities-Content {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 16px;
+
+}
+
+.ObjectListingDetails-Facilities-Content p {
+   font-size: 12px;
+   font-family: Lora;
+}
+
+/* .ObjectListingDetails-Facilities-Content img{
     padding: 5px;
  } */
 
- .ObjectListingDetails-Text-And-Icons{
-    display: flex;
-    /* border: 1px solid; */
-    align-items: center;
-    /* justify-content: space-around; */
- }
- .Facility-Icon{
-    /* border: 1px solid; */
-    height: 27px;
-    width: 27px;
- }
+.ObjectListingDetails-Text-And-Icons {
+   display: flex;
+   /* border: 1px solid; */
+   align-items: center;
+   /* justify-content: space-around; */
+}
 
- .ObjectListingDetails-Facilities-Text{
-    margin-left: 5%;
- }
+.Facility-Icon {
+   /* border: 1px solid; */
+   height: 27px;
+   width: 27px;
+}
+
+.ObjectListingDetails-Facilities-Text {
+   margin-left: 5%;
+   
+}
+.ObjectListingDetails-Facilities-Text-Details{
+   font-family: Lora;
+}
+
+/* DESKTOP */
+
+.Desktop-RentalObject-Details-Image {
+   height: 840px;
+   width: 100%;
+   object-fit: cover;
+}
+
+.ObjectListingDetails-Facilities-Container-Desktop {
+
+   margin: 0 auto;
+   margin-top: 55px;
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   justify-content: start;
+   width: 75%;
+   /* border: 2px solid; */
+   
+
+
+}
+
+.ObjectListingDetails-Facilities-Content-Desktop {
+   margin-top: 25px;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 30px;
+   position: relative;
+
+}
+
+.RentalObjectPackage-Desktop {
+   margin: 0 auto;
+   width: 75%;
+   /* border: 2px solid; */
+   list-style-position: inside;
+
+}
+
+.RentalObjectPackage-Desktop-UL-List {
+   gap: 20px;
+   display: grid;
+   grid-template-columns: repeat(2, 2fr);
+   width: 65%;
+
+}
+
+/* .RentalObjectPackage-ListItem-Desktop{
+   list-style: none;
+} */
+
+/* This is inside the div -> ObjectListingDetails-Facilities-Content-Desktop (position: relative)  */
+.Reservation-Info-Area-Desktop{ 
+   position: absolute;
+   right: -350px;
+   top: 0;
+   width: 400px;
+   height: 260px;
+   /* background-color: red; */
+}
+
+.Reservation-Info-Area-Desktop-ReservationInfoCard{
+   
+   /* right: 20px;
+   top: -65px; */
+}

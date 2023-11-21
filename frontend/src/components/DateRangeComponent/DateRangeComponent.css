@@ -28,6 +28,7 @@
     align-items: start;
     justify-content: center;
     border: none;
+    margin-right: 10px;
     
 }
 .inputBoxCheckIn-container{
@@ -74,3 +75,49 @@
 .rdrMonthName{
     display: none !important;
 }
+
+
+@media (min-width: 999px) {
+    .calendarWrap {
+        margin: 0 auto;
+      /* border: 2px solid; */
+    }
+    .CalenderInputAndLabel{
+        margin: 0 auto;
+        /* width: 225px; */
+        /* border: 2px solid blue; */
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        /* align-items: center; */
+        justify-content: space-between;
+        font-size: 20px;
+    }
+    .CalenderInputAndLabel-Content{
+        border-bottom: none;
+        border-top: none;
+        /* border-right: 1px solid; */
+    }
+
+    .inputBoxCheckIn-container, .inputBoxCheckOut-container {
+        width: 225px;
+    }
+
+    .inputBoxCheckOut-container{
+        border-right: 1px solid #D1D1D1;
+    }
+
+    #inputBoxCheckOut, #inputBoxCheckIn{
+        background-color: #f1f1f1;
+    }
+    
+    
+
+
+    /* #inputBoxCheckIn, #inputBoxCheckOut{
+        width: 253px;
+        height: 23px;
+        
+    } */
+    
+  }

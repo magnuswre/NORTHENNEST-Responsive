@@ -3,14 +3,9 @@
   margin: 0;
 }
 
-
 .root{
-  /* border: 2px solid; */
   display: flex;
   justify-content: center;
-  /* color: #486349;
-  color: #CBB26A;
-  color: #F7F7F7; */
   --global-color-1:#486349;
   --global-color-2: #CBB26A;
   --global-color-3:#F7F7F7;
@@ -19,6 +14,26 @@
 
 .Master-Container{
    background-color: white;
+
+}
+
+@media (max-width: 999px) {
+  .Master-Container {
+    width: 390px; /* Adjust the width for screens larger than 500px but smaller than 1440px */
+  }
 }
 
 
+@media (min-width: 1000px) and (max-width: 2000px) {
+  .Master-Container {
+    width: 100%; /* Adjust the width for screens larger than 500px but smaller than 1440px */
+   /* max-width: 1440px; /* Optionally, you can set a maximum width */
+    margin: 0 auto; /* Center the content on larger screens */
+  }
+}
+
+/* @media (min-width: 1440px) {
+  .Master-Container {
+    width: 100%; /* Adjust the width for screens larger than or equal to 1440px 
+  }
+} */

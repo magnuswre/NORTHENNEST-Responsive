@@ -9,3 +9,16 @@
 
 }
 
+@media (min-width: 1000px) and (max-width: 2000px) {
+    .Home-About-Activities-Booking {
+     /* margin-left: 50px; */
+     width: auto;
+     height: auto;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+    }
+  }
+
+
+

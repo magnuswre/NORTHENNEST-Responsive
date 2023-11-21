@@ -1,7 +1,9 @@
 import './BookingInformationCard.css'
 import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 const BookingInformationCard = () => {
+  const isMobile = useMediaQuery({ maxWidth: 1000 });
   const checkInDate = localStorage.getItem('checkIn');
   const checkOutDate = localStorage.getItem('checkOut');
 
@@ -23,53 +25,108 @@ const BookingInformationCard = () => {
 
 
   return (
-    <div className='BookinginformationCard-Container'>
-      <h3 className='Booking-information-Title'>
-        <span className='Booking-information-Title-Value'>Booking information</span> 
-      </h3>
-      <div className='BookinginformationCard-Content'>
+    <div>
+      {isMobile ?
+        <div className='BookinginformationCard-Container'>
+          <h3 className='Booking-information-Title'>
+            <span className='Booking-information-Title-Value'>Booking information</span>
+          </h3>
+          <div className='BookinginformationCard-Content'>
 
-      <div>
-        <h3>Check in Date</h3>
-        <p>{checkInDate || 'Not selected'} from 12 AM</p>
-      </div>
+            <div>
+              <h3>Check in Date</h3>
+              <p>{checkInDate || 'Not selected'} from 12 AM</p>
+            </div>
 
-      <div>
-        <h3>Check out Date</h3>
-        <p>{checkOutDate || 'Not selected'} from 12 AM</p>
-      </div>
+            <div>
+              <h3>Check out Date</h3>
+              <p>{checkOutDate || 'Not selected'} from 12 AM</p>
+            </div>
 
-      <div>
-        <h3>Guest</h3>
-        <p>2 pers</p>
-      </div>
+            <div>
+              <h3>Guest</h3>
+              <p>2 pers</p>
+            </div>
 
-      <div>
-        <h3>Cabin Package</h3>
-        <p>Deluxe-package</p>
-        <p>Exclusive breakfast,
-          premium towels and sheets, champagne,
-          bathtub, sauna, luxary beauty products.
-        </p>
-      </div>
+            <div>
+              <h3>Cabin Package</h3>
+              <p>Deluxe-package:</p>
+              <p>Exclusive breakfast,
+                premium towels and sheets, champagne,
+                bathtub, sauna, luxary beauty products.
+              </p>
+            </div>
 
-      <div >
-        <h3>Cancellation Protection</h3>
-        <div className='Cancellation-Protection-Content'>
-        <p>500 SEK</p>
-        <input type="checkbox"
-          checked={isCancellationProtectionSelected}
-          onChange={handleCancellationProtectionChange} />
-      </div>
-      </div>
+            <div>
+              <h3>Cancellation Protection</h3>
+              <div className='Cancellation-Protection-Content'>
+                <p>500 SEK</p>
+                <input type="checkbox"
+                  checked={isCancellationProtectionSelected}
+                  onChange={handleCancellationProtectionChange} />
+              </div>
+            </div>
 
-      <div id='Total-Cost-Border-Top' >
-        <h3>Total Cost:</h3>
-        <p>{totalCost} SEK</p>
-      </div>
+            <div id='Total-Cost-Border-Top' >
+              <h3>Total Cost:</h3>
+              <p>{totalCost} SEK</p>
+            </div>
 
-      </div>
+          </div>
+        </div>
+        :
+
+        // DESKTOP --------    
+        <div className='BookinginformationCard-Container-Desktop'>
+          <h3 className='Booking-information-Title'>
+            <span className='Booking-information-Title-Value'>Booking information</span>
+          </h3>
+          <div className='BookinginformationCard-Content'>
+
+            <div>
+              <h3>Check in Date</h3>
+              <p>{checkInDate || 'Not selected'} from 12 AM</p>
+            </div>
+
+            <div>
+              <h3>Check out Date</h3>
+              <p>{checkOutDate || 'Not selected'} from 12 AM</p>
+            </div>
+
+            <div>
+              <h3>Guest</h3>
+              <p>2 pers</p>
+            </div>
+
+            <div>
+              <h3>Cabin Package</h3>
+              <p>Deluxe-package:</p>
+              <p>Exclusive breakfast,
+                premium towels and sheets, champagne, <br></br>
+                bathtub, sauna, luxary beauty products.
+              </p>
+            </div>
+
+            <div >
+              <h3>Cancellation Protection</h3>
+              <div className='Cancellation-Protection-Content'>
+                <p>500 SEK</p>
+                <input type="checkbox"
+                  checked={isCancellationProtectionSelected}
+                  onChange={handleCancellationProtectionChange} />
+              </div>
+            </div>
+
+            <div id='Total-Cost-Border-Top-Desktop' >
+              <h3>Total Cost:</h3>
+              <p>{totalCost} SEK</p>
+            </div>
+
+          </div>
+        </div>
+      }
     </div>
+
   )
 }
 

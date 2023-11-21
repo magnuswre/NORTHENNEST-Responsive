@@ -1,0 +1,52 @@
+.Booking-Alternative-Container{
+    /* margin-left: 50px;
+    margin-right: 50px; */
+   width: 90%;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 50vh;
+
+}
+.Booking-Alternative-Wrapper{
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 80%; 
+    height: 200px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 20px 20px;
+
+}
+
+.Booking-Alternative-Title{
+    margin-top: 5%;
+}
+
+/* DESKTOP -------------*/
+
+.Booking-Alternative-Container-Desktop{
+    /* margin-left: 50px;
+    margin-right: 50px; */
+   width: 90%;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   /* border: 1px solid; */
+   /* place-items: center; */
+   height: 70vh;
+}
+
+.Booking-Alternative-Wrapper-Desktop{
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 50%; 
+    height: 200px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 20px 20px;
+}

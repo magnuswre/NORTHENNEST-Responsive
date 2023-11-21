@@ -21,3 +21,40 @@
     width: 100%;
     /* border: 2px solid gold; */
 }
+
+
+.Home-HeroSearch-Container-Desktop{
+    display: flex;
+    align-items: center;
+    /* margin-top: 15px; */
+    /* justify-content: space-between; */
+}
+
+.Home-HeroSearch-Desktop{
+    /* width: 844px; */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    /* justify-content: space-evenly; */
+    /* border: 2px pink solid;  */
+    border-radius: 15px;
+    background: #F1F1F1;
+}
+
+
+.Home-DatePickers-Desktop{
+    /* border: 2px solid green; */
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.Home-PackagePicker-Desktop{
+    /* border: 2px solid gold; */
+    /* width: 100%; */
+    display: flex;
+    /* justify-items: space-around;
+    align-items: center; */
+}

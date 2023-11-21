@@ -1,4 +1,4 @@
-.Navbar{
+.Navbar {
     background-color: var(--global-color-1);
     display: flex;
     justify-content: space-between;
@@ -6,11 +6,82 @@
     height: 90px;
 }
 
-.Navbar-Logo{
+.Navbar-Logo {
     width: 148px;
     /* border: 2px solid; */
 }
-.Navbar-Menu{
+
+.Navbar-Menu {
     width: 23px;
     margin-right: 25px;
+}
+
+
+.Desktop-Navbar {
+    height: 529px;
+    background-image: url('../../assets/homeimagedesktop.jpg');
+    background-size: cover;
+    background-position: center;
+    /* display: grid;
+    place-items: center; */
+    position: relative;
+}
+
+.Desktop-NavBar-Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.Desktop-NavBar-Logo {
+    width: 350px;
+    /* border: 2px solid; */
+}
+
+.Desktop-NavBar-Title {
+    color: white;
+    position: absolute;
+    top: 140px;
+    right: 70px;
+    color: #FFF;
+
+}
+
+.Desktop-NavBar-Title h1 {
+    font-family: Libre Baskerville;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 35px;
+    /* 53.333% */
+    letter-spacing: -0.675px;
+}
+
+.Desktop-NavBar-HeroSearch {
+    margin-top: 5%;
+    display: grid;
+    place-items: center;
+    /* padding-left: 25px; */
+}
+
+.Desktop-NavBar-LinksAndIcon {
+    margin-top: 50px; 
+    margin-right: 50px;
+    /* border: solid 2px yellow; */
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #CBB26A;
+    font-family: Libre Baskerville;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    /* 120% */
+    letter-spacing: -0.3px;
+}
+
+.Desktop-NavBar-NavLinks {
+    color: #CBB26A;
 }

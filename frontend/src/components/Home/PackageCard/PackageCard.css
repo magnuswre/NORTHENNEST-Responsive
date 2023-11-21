@@ -48,10 +48,18 @@
 
 .PackageCard-Icon-Content {
     display: flex;
-
     height: 100%;
 }
 
 .PackageCard-Icons {
     margin: 5px;
 }
+
+@media (min-width: 1000px) and (max-width: 2000px) {
+    .Home-PackageCard-container {
+    
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+    }
+  }

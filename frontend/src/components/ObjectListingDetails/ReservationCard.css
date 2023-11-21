@@ -1,4 +1,4 @@
-.ReservationInfoCard-Container{
+.ReservationInfoCard-Container {
     display: flex;
     flex-direction: row;
     background-color: #E9E9E9;
@@ -6,13 +6,15 @@
     justify-content: space-around;
     height: 115px;
     /* box-sizing: border-box; */
+    font-family: Lora;
 }
 
-.ReservationInfoCard-Details{
+.ReservationInfoCard-Details {
     box-sizing: border-box;
-    width: 128px;
+    width: 150px;
     height: 82px;
     padding: 5px;
+
     /* border: 2px solid gold; */
     background-color: white;
     border-radius: 20px;
@@ -24,23 +26,24 @@
     /* text-align: center; */
 }
 
-.smalltext{
+.smalltext {
     font-size: 12px;
 }
 
-.ReservationInfoCard-Price-Btn{
+.ReservationInfoCard-Price-Btn {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* border: 2px solid green; */
 }
-.ReservationInfoCard-Price{
+
+.ReservationInfoCard-Price {
     font-size: 16px;
     font-weight: bold;
 }
 
-.ReservationInfoCard-Btn{
+.ReservationInfoCard-Btn {
     width: 200px;
     /* height: 43px; */
     flex-shrink: 0;
@@ -49,4 +52,55 @@
     border: none;
     font-size: 20px;
     padding: 5%;
+}
+
+/* DESKTOP */
+
+.ReservationInfoCard-Container-Desktop {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 260px;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.ReservationInfoCard-Wrapper-Desktop{
+    width: 85%;
+    height: 75%;
+    display: grid;
+}
+
+.ReservationInfoCard-Details-Desktop p,
+.ReservationInfoCard-Price-Desktop p{
+    width: 50%;
+    /* background-color: red; */
+}
+
+.ReservationInfoCard-Details-Desktop,
+.ReservationInfoCard-Price-Desktop {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: start;
+}
+
+.ReservationInfoCard-Btn-Desktop {
+    display: flex;
+    width: 100%;
+    height: 54px;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    align-items: center;
+    border-radius: 15px;
+    background: #D8C690;
+    color: #000;
+    font-family: Lora;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: 0;
 }

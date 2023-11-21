@@ -20,3 +20,12 @@
     display: grid;
     place-items: center;
 }
+
+@media (min-width: 1000px) and (max-width: 2000px) {
+    #Home-About-Container, #Home-Activites-Container{
+        border: none;
+     /* display: flex;
+     justify-content: space-around;
+     align-items: center; */
+    }
+  }

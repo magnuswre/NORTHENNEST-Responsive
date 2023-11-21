@@ -1,7 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import './BookingFormComponent.css'
+import './BookingFormLoggedInComponent.css'
+import visamastercardImage from '../../../assets/visamastercard.png';
+import klarnaImage from '../../../assets/klarna.png';
+import paypalImage from '../../../assets/paypal.png';
+import americanExpressImage from '../../../assets/americanexpress.png';
 
 // import { checkIfEmpty } from './Validation';
 import { createOrder } from '../../../features/order/orderSlice';
@@ -125,10 +129,10 @@ const BookingFormLoggedInComponent = ( {userData} ) => {
   return (
     <div className='form-container'>
       <form onSubmit={handleSubmit}>
-        <p>user info</p>
         <div className='Payment-Methods'>
           <div className='visaMastercard'>
-            <p>Visa/Mastercard</p>
+          <img src={visamastercardImage} alt="" />
+
             <input
               type="radio"
               name="paymentMethod"
@@ -140,7 +144,7 @@ const BookingFormLoggedInComponent = ( {userData} ) => {
             />
           </div>
           <div className='Klarna'>
-            <p>Klarna</p>
+          <img src={klarnaImage} alt="" />
             <input
               type="radio"
               name="paymentMethod"
@@ -151,7 +155,7 @@ const BookingFormLoggedInComponent = ( {userData} ) => {
             />
           </div>
           <div className='PayPal'>
-            <p>PayPal</p>
+          <img src={paypalImage} alt="" />
             <input
               type="radio"
               name="paymentMethod"
@@ -162,7 +166,7 @@ const BookingFormLoggedInComponent = ( {userData} ) => {
             />
           </div>
           <div className='AmericanExpress'>
-            <p>American Express</p>
+          <img src={americanExpressImage} alt="" />
             <input
               type="radio"
               name="paymentMethod"

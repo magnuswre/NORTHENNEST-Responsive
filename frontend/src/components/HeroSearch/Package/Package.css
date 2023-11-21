@@ -1,7 +1,7 @@
-.PackageWrap{
+/* .PackageWrap{
     display: inline-block;
     width: 100%;
-}
+} */
 
 .PackageLabel{
     font-size: 20px;
@@ -43,9 +43,9 @@
 }
 
 .Drop-Down-Packages-Item{
-  height: 30px;
-  display: grid;
-  place-items: center;
+    height: 30px;
+    display: grid;
+    place-items: center;
 }
 
 .Packages-Item-Border{
@@ -82,3 +82,29 @@
     margin-bottom: 15px;
     font-weight: 700;
 }
+
+@media (min-width: 999px) {
+
+    #InputPackage{
+        background-color: #f1f1f1;
+    }
+    .PackageWrap {
+        background-color: #f1f1f1;
+     display: flex;
+     /* width: 100%; */
+         justify-content: space-evenly;
+        /*align-items: center; */
+        /* border: 3px solid yellow; */
+        /* border: 2px solid; */
+    }
+    .Package-Container{
+        border-right: 1px solid #D1D1D1;
+        width: 225px;
+    }
+    .magnifyingglass{
+        border: none;
+        /* padding-left: 3%; */
+        /* background-color: red; */
+        margin-left: 25px;
+    }
+  }
