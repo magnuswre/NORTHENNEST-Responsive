@@ -1,0 +1,182 @@
+.User-Profile-Form-Container{
+    margin: 0 auto;
+    margin-top: 5%;
+    display: grid;
+    /* flex-direction: column; */
+    /* border: 2px solid; */
+    width: 90%;
+    background-color: #F0F0F0;
+    font-family: Lora;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    border: 1px solid;
+}
+
+.User-Profile-Form-Wrapper{
+    margin: 8px;
+    display: grid;
+    border: 1px solid;
+}
+
+.User-Profile-Form-Wrapper > * {
+    margin-bottom: 10px;
+} 
+
+.User-Profile-Payment-Methods{
+
+   /* display: flex;
+   align-items: center;
+   justify-content: space-around; */
+}
+/* .form-container input{
+    border-radius: 10px;
+    border: none;
+    background-color: #E5E5E5;
+    outline: none;
+    height: 21px;
+    text-indent: 5px;
+}  */
+
+
+
+/* .error-text{
+    color: red;
+} */
+
+/* h4{
+    padding: 0.8%;
+} */
+/* .visaMastercard, .Klarna, .PayPal, .AmericanExpress{
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+
+} */
+
+/* #visaMastercard, #Klarna, #PayPal, #AmericanExpress{
+    margin-left: 5%;
+
+} */
+
+.User-Profile-Confirm-Booking-Btn-Container{
+    display: grid;
+    place-items: center;
+    padding: 5%;
+}
+
+.User-Profile-Confirm-Booking-Btn{
+    display: inline-flex;
+    padding: 11px 16px 12px 13px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: #D8C690;
+    border: none;
+    font-family: Lora;
+}
+
+/* DESKTOP */
+
+/* .form-container-Desktop{
+    font-family: Lora;
+    margin: 0 auto;
+    width: 90%;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+} */
+
+/* .Form-Wrapper-Desktop{
+    display: grid;
+    margin: 8px;
+    /* border: 1px solid; */
+    /* grid-template-columns: repeat(2, 1fr); 
+    
+} */
+/* .Form-YOLO{
+    display: grid;
+     grid-template-columns: repeat(2, 1fr);
+    /* align-items: center;
+
+    justify-content: space-between; 
+    
+} */
+
+ /* .Form-Content-Desktop > *, .Payment-Methods-Desktop > *{
+     margin-top: 10px;
+}  */
+
+/* .form-container-Desktop input{
+    width: 50%;
+    border-radius: 10px;
+    border: none;
+    background-color: #E5E5E5;
+    outline: none;
+    height: 25px;
+    text-indent: 5px;
+    font-size: 16px;
+}  */
+
+/* .Payment-Methods-Desktop input[type="radio"]{
+    width: 3%;
+} */
+
+.User-Profile-Confirm-Booking-Btn-Container-Desktop{
+    display: grid;
+    place-items: center;
+    padding: 1%;
+    /* border: 2px solid; */
+}
+
+.User-Profile-Confirm-Booking-Btn-Desktop{
+    display: inline-flex;
+    padding: 11px 16px 12px 13px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: #D8C690;
+    border: none;
+    font-family: Lora;
+}
+
+ /* .form-container-Desktop input::placeholder {
+    color: #555; /* Set the desired color for the placeholder text 
+    font-style: italic; /* Optionally set the font style for the placeholder text 
+    font-size: 16px;
+
+} */
+
+/* .Payment-Methods-Container-Desktop{
+    display: grid;
+}  */
+
+
+.User-Profile-Form-Container{
+    margin: 0 auto;
+    margin-top: 5%;
+    display: grid;
+    /* flex-direction: column; */
+    /* border: 2px solid; */
+    width: 90%;
+    background-color: #F0F0F0;
+    font-family: Lora;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    border: 1px solid;
+}
+
+.User-Profile-Form-Wrapper-Desktop{
+    margin: 8px;
+    display: grid;
+    border: 1px solid;
+}
+
+.User-Profile-Form-Wrapper-Desktop > * {
+    margin-bottom: 10px;
+} 
+
+.User-Profile-Payment-Methods-Desktop{
+
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}

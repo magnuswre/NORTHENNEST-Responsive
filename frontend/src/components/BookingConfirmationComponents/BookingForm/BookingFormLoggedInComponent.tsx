@@ -10,6 +10,8 @@ import americanExpressImage from '../../../assets/americanexpress.png';
 // import { checkIfEmpty } from './Validation';
 import { createOrder } from '../../../features/order/orderSlice';
 // import { setRentalObjectId } from '../../../features/rentalObject/rentalObjectSlice'
+import { useMediaQuery } from 'react-responsive';
+
 
 const initState = {
   fullName: '',
@@ -21,7 +23,9 @@ const initState = {
   paymentMethod: 'visa/mastercard'
 };
 
-const BookingFormLoggedInComponent = ( {userData} ) => {
+const BookingFormLoggedInComponent = ({ userData }) => {
+  const isMobile = useMediaQuery({ maxWidth: 1000 });
+
   console.log(userData)
 
   const dispatch = useDispatch();
@@ -88,50 +92,52 @@ const BookingFormLoggedInComponent = ( {userData} ) => {
     //   }));
     // }
 
-   // Convert totalPriceWithProtection to a number, providing a fallback of 0
-  const priceValue = parseFloat(totalPriceWithProtection ?? '0');
+    // Convert totalPriceWithProtection to a number, providing a fallback of 0
+    const priceValue = parseFloat(totalPriceWithProtection ?? '0');
 
-  if (!isNaN(priceValue) && RentalObjectId) { // Check if priceValue is a number and id is not undefined
-    const orderData = {
-      userId: userData._id,
-      rentalObject: RentalObjectId,
-      bookingDateArrival: checkIn ?? new Date().toISOString(), // Provide a default value if null
-      bookingDateDeparture: checkOut ?? new Date().toISOString(), // Provide a default value if null
-      price: totalPriceWithProtection,
-      email: userData.email,
-      phoneNumber: userData.mobile,
-      // streetAddress: userData.streetAddress,
-      // stateProvince: userData.stateProvince,
-      // city: userData.city,
-      paymentMethod: formData.paymentMethod,
-      status: 'pending',
-      guest: 2
-    };
-    console.log(orderData)
+    if (!isNaN(priceValue) && RentalObjectId) { // Check if priceValue is a number and id is not undefined
+      const orderData = {
+        userId: userData._id,
+        rentalObject: RentalObjectId,
+        bookingDateArrival: checkIn ?? new Date().toISOString(), // Provide a default value if null
+        bookingDateDeparture: checkOut ?? new Date().toISOString(), // Provide a default value if null
+        price: totalPriceWithProtection,
+        email: userData.email,
+        phoneNumber: userData.mobile,
+        // streetAddress: userData.streetAddress,
+        // stateProvince: userData.stateProvince,
+        // city: userData.city,
+        paymentMethod: formData.paymentMethod,
+        status: 'pending',
+        guest: 2
+      };
+      console.log(orderData)
 
-    const resultAction = await dispatch(createOrder(orderData)as any);
+      const resultAction = await dispatch(createOrder(orderData) as any);
 
-    if (createOrder.fulfilled.match(resultAction)) {
-      if (resultAction.payload && 'order' in resultAction.payload && '_id' in resultAction.payload.order) {
-        const newOrderId = resultAction.payload.order._id; // Extract the _id
-        navigate(`/paymentconfirmation/${newOrderId}`); // Navigate using the _id
+      if (createOrder.fulfilled.match(resultAction)) {
+        if (resultAction.payload && 'order' in resultAction.payload && '_id' in resultAction.payload.order) {
+          const newOrderId = resultAction.payload.order._id; // Extract the _id
+          navigate(`/paymentconfirmation/${newOrderId}`); // Navigate using the _id
+        } else {
+          console.error('Order ID was not present in the response payload.');
+        }
       } else {
-        console.error('Order ID was not present in the response payload.');
+        console.error('Order creation failed.', resultAction.error);
       }
     } else {
-      console.error('Order creation failed.', resultAction.error);
+      console.error('Total price is not a valid number or rental object ID is missing.');
     }
-  } else {
-    console.error('Total price is not a valid number or rental object ID is missing.');
-  }
-};
+  };
 
   return (
-    <div className='form-container'>
-      <form onSubmit={handleSubmit}>
-        <div className='Payment-Methods'>
+    <div>
+      {isMobile ? 
+      <div className='User-Profile-Form-Container'>
+      <form className='User-Profile-Form-Wrapper' onSubmit={handleSubmit}>
+        <div className='User-Profile-Payment-Methods'>
           <div className='visaMastercard'>
-          <img src={visamastercardImage} alt="" />
+            <img src={visamastercardImage} alt="" />
 
             <input
               type="radio"
@@ -144,7 +150,7 @@ const BookingFormLoggedInComponent = ( {userData} ) => {
             />
           </div>
           <div className='Klarna'>
-          <img src={klarnaImage} alt="" />
+            <img src={klarnaImage} alt="" />
             <input
               type="radio"
               name="paymentMethod"
@@ -155,7 +161,7 @@ const BookingFormLoggedInComponent = ( {userData} ) => {
             />
           </div>
           <div className='PayPal'>
-          <img src={paypalImage} alt="" />
+            <img src={paypalImage} alt="" />
             <input
               type="radio"
               name="paymentMethod"
@@ -166,7 +172,7 @@ const BookingFormLoggedInComponent = ( {userData} ) => {
             />
           </div>
           <div className='AmericanExpress'>
-          <img src={americanExpressImage} alt="" />
+            <img src={americanExpressImage} alt="" />
             <input
               type="radio"
               name="paymentMethod"
@@ -178,13 +184,78 @@ const BookingFormLoggedInComponent = ( {userData} ) => {
           </div>
         </div>
 
-        <button className="Confirm-Booking-Btn">Confirm Booking</button>
+      <div className="User-Profile-Confirm-Booking-Btn-Container">
+      <button className="User-Profile-Confirm-Booking-Btn">Confirm Booking</button>
+      </div>
+      
       </form>
 
-      <div className="Confirm-Booking-Btn-Container">
-
-      </div>
     </div>
+      : 
+      
+      <div className='User-Profile-Form-Container-Desktop'>
+      <form className='User-Profile-Form-Wrapper-Desktp' onSubmit={handleSubmit}>
+        <div className='User-Profile-Payment-Methods-Desktop'>
+          <div className='visaMastercard'>
+            <img src={visamastercardImage} alt="" />
+
+            <input
+              type="radio"
+              name="paymentMethod"
+              id="visaMastercard"
+              value="visa/mastercard"
+              checked={formData.paymentMethod === "visa/mastercard"}
+              onChange={handleChangeInput}
+
+            />
+          </div>
+          <div className='Klarna'>
+            <img src={klarnaImage} alt="" />
+            <input
+              type="radio"
+              name="paymentMethod"
+              id="Klarna"
+              value="Klarna"
+              checked={formData.paymentMethod === "Klarna"}
+              onChange={handleChangeInput}
+            />
+          </div>
+          <div className='PayPal'>
+            <img src={paypalImage} alt="" />
+            <input
+              type="radio"
+              name="paymentMethod"
+              id="PayPal"
+              value="PayPal"
+              checked={formData.paymentMethod === "PayPal"}
+              onChange={handleChangeInput}
+            />
+          </div>
+          <div className='AmericanExpress'>
+            <img src={americanExpressImage} alt="" />
+            <input
+              type="radio"
+              name="paymentMethod"
+              id="AmericanExpress"
+              value="American Express"
+              checked={formData.paymentMethod === "American Express"}
+              onChange={handleChangeInput}
+            />
+          </div>
+        </div>
+
+      <div className="User-Profile-Confirm-Booking-Btn-Container-Desktop">
+
+        <button className="User-Profile-Confirm-Booking-Btn-Desktop">Confirm Booking</button>
+      </div>
+      </form>
+
+    </div>
+      
+      
+      }
+    </div>
+    
   )
 }
 

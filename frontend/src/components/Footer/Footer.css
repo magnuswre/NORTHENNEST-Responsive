@@ -1,5 +1,13 @@
 .Footer{
     height: 950px;
+    margin: 0 auto;
     background-color: var(--global-color-1);
     text-align: center;
+    display: grid;
+    color: white;
+    width: 80%;
+}
+
+#Footer-Title, #Footer-Copyright{
+    color: black;
 }
