@@ -25,6 +25,13 @@ import { useMediaQuery } from 'react-responsive';
 import { ObjectListingDetailsCarousel } from './ObjectListingDetailsCarousel/ObjectListingDetailsCarousel';
 
 
+
+interface Facility {
+  _id: string;
+  text: string;
+  iconText?: string;
+}
+
 const ObjectListingDetails = () => {
   const isMobile = useMediaQuery({ maxWidth: 1000 });
   const { id } = useParams();
@@ -35,7 +42,7 @@ const ObjectListingDetails = () => {
     error: string | null;
   };
   const pricePerNight = rentalObject?.price;
-  const [facilities, setFacilities] = useState<{ _id: string; text: string }[]>([]);
+  const [facilities, setFacilities] = useState<Facility[]>([]);
   useEffect(() => {
     if (pricePerNight != null) {
       console.log('Setting pricePerNight in localStorage:', pricePerNight);
@@ -106,13 +113,13 @@ const ObjectListingDetails = () => {
             </div>
           )}
           <div className='ObjectListingDetails-Facilities-Container'>
-            <h2>Facilities</h2>
+            <h3>Facilities</h3>
             <div className='ObjectListingDetails-Facilities-Content'>
               {facilities.length > 0 ? (
                 facilities.map((facility) => (
                   <div className='ObjectListingDetails-Text-And-Icons' key={facility._id}>
                     <img
-                      src={iconMap[facility.iconText]}
+                      src={iconMap[facility.iconText ?? '']}
                       alt={''}
                       className='Facility-Icon'
                     />
@@ -128,21 +135,23 @@ const ObjectListingDetails = () => {
           <div className='Reservation-Info-Area'>
             <ReservationInfoCard />
           </div>
-          <div className='Reservation-Info-Area-Title'>
-            <h2>Included in the package</h2>
-          </div>
-          <div className='RentalObjectPackage'>
-            <ul>
-              {rentalObject && rentalObject.RentalObjectPackage && rentalObject.RentalObjectPackage.length > 0 ? (
-                rentalObject.RentalObjectPackage.map((_package, index) => (
-                  <li className='RentalObjectPackage-ListItem' key={index}>{_package}</li>
-                ))
-              ) : (
-                <h2>No packages to show</h2>
-              )}
-            </ul>
-          </div>
 
+          <div className='ObjectListingDetails-Included-Info-Container'>
+            <div className='Reservation-Info-Area-Title'>
+              <h3>Included in the package</h3>
+            </div>
+            <div className='RentalObjectPackage'>
+              <ul>
+                {rentalObject && rentalObject.RentalObjectPackage && rentalObject.RentalObjectPackage.length > 0 ? (
+                  rentalObject.RentalObjectPackage.map((_package, index) => (
+                    <li className='RentalObjectPackage-ListItem' key={index}>{_package}</li>
+                  ))
+                ) : (
+                  <h2>No packages to show</h2>
+                )}
+              </ul>
+            </div>
+          </div>
           <ReviewObjectListingCard />
         </div>
       ) : (
@@ -171,7 +180,7 @@ const ObjectListingDetails = () => {
                 facilities.map((facility) => (
                   <div className='ObjectListingDetails-Text-And-Icons' key={facility._id}>
                     <img
-                      src={iconMap[facility.iconText]}
+                      src={iconMap[facility.iconText ?? '']}
                       alt={''}
                       className='Facility-Icon'
                     />
@@ -182,7 +191,7 @@ const ObjectListingDetails = () => {
                 <h2>No Facilities to show</h2>
               )}
 
-      {/* RESERVATION CARD in desktop version */}
+              {/* RESERVATION CARD in desktop version */}
               <div className='Reservation-Info-Area-Desktop'>
                 <ReservationInfoCard />
               </div>

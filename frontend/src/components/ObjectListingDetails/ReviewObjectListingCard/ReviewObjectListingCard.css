@@ -1,3 +1,15 @@
+.ReviewObjectListingCard-container{
+    /* border: 1px solid; */
+    width: 90%;
+    margin: 0 auto; 
+    margin-top: 15px;
+    border-top: 1px solid #BEBEBE;
+}
+
+.ReviewObjectListingCard-container h3{
+    margin-top: 15px;
+}
+
 .ReviewObjectListingCard-content {
     margin: 0 auto;
     display: flex;

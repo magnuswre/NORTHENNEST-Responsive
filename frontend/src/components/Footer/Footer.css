@@ -5,9 +5,219 @@
     text-align: center;
     display: grid;
     color: white;
-    width: 80%;
+    /* width: 80%; */
+    font-family: Lora;
+    margin-top: 25px;
 }
 
 #Footer-Title, #Footer-Copyright{
-    color: black;
+    color: #CBB26A;
 }
+
+.Footer h3:first-child{
+   margin-top: 40px
+}
+
+.Footer h3{
+   font-family: 'Libre Baskerville', serif;
+}
+
+#Footer-Title{
+   margin-top: -25px;
+}
+
+
+.Footer-Icon{
+    width: 30px;
+    height: 30px;
+    /* object-fit: cover; */
+}
+
+.Footer-Address, .Footer-Phone, .Footer-Mail{
+    margin: 0 auto;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    text-align: start;
+   
+    line-height: 24px;
+    /* letter-spacing: -0.225px; */
+} 
+
+.Footer-Input{
+    width: 250px;
+    height: 52px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    text-indent: 10px;
+
+}
+
+.Footer-Join-Us-Header {
+    height: 25px;
+}
+
+.Footer-Sign-Up-Header{
+    height: 50px;
+}
+
+/* .Footer-Sign-Up-Header{
+    text-align: center;
+} */
+
+
+.Footer-Social-Media-Icons{
+    /* margin-top: -40px; */
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid; */
+}
+
+.Footer-Logo{
+    width: 200px;
+}
+
+
+/* DESKTOP */
+
+
+.Footer-Desktop{
+    height: 500px;
+    margin: 0 auto;
+    background-color: var(--global-color-1);
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr );
+
+
+    color: white;
+    font-family: Lora;
+    margin-top: 25px;
+}
+
+
+
+#Footer-Title-Desktop, #Footer-Copyright-Desktop{
+    color: #CBB26A;
+}
+
+.yolo11, .yolo22, .yolo33 {
+    margin-top: 50px;
+    display: grid;
+    /* place-items: center; */
+    width: 100%;
+    /* margin: 0 auto; */
+    /* margin-top: 25px; */
+}
+
+.yolo11{
+    margin-left: 75px;
+}
+
+.yolo11, .yolo22  {
+    /* height: 80%; */
+}
+
+/* .yolo33{
+    /* height: 80%; 
+} */
+
+
+.Footer-Contact-Us-Header-Desktop, .Footer-Title-Header-Desktop,
+.Footer-Address-Desktop, .Footer-Phone-Desktop, .Footer-Mail-Desktop{
+    display: grid;
+    width: 70%;
+    grid-template-columns: 20% 80%;
+    text-align: start;
+    line-height: 24px;
+} 
+
+.Footer-Logo-Desktop{
+    width: 350px;
+}
+
+.Footer-Social-Media-Icons-Desktop{
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid; */
+
+}
+
+.Footer-Input-Desktop{
+    width: 80%;
+    height: 60px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    text-indent: 10px;
+}
+.Footer-Copyright-Desktop{
+    text-align: center;
+}
+
+/*
+.Footer h3:first-child{
+   margin-top: 40px
+}
+
+.Footer h3{
+   font-family: 'Libre Baskerville', serif;
+}
+
+#Footer-Title{
+   margin-top: -25px;
+}
+
+
+.Footer-Icon{
+    width: 30px;
+    height: 30px;
+}
+
+.Footer-Address, .Footer-Phone, .Footer-Mail{
+    margin: 0 auto;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    text-align: start;
+   
+    line-height: 24px;
+} 
+
+.Footer-Input{
+    width: 250px;
+    height: 52px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    text-indent: 10px;
+
+}
+
+.Footer-Join-Us-Header {
+    height: 25px;
+}
+
+.Footer-Sign-Up-Header{
+    height: 50px;
+}
+
+
+.Footer-Social-Media-Icons{
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Footer-Logo{
+    width: 200px;
+} */

@@ -21,6 +21,9 @@
   .Master-Container {
     width: 390px; /* Adjust the width for screens larger than 500px but smaller than 1440px */
   }
+  /* body{
+    overflow: auto
+  } */
 }
 
 

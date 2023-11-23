@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { checkIfEmpty } from './Validation';
 
 import { createUser } from '../../features/user/userSlice';
-import { useDispatch, useSelector } from 'react-redux';
-// import { RootState } from 'src/app/store';
+import { useDispatch } from 'react-redux';
 
 
 
@@ -20,13 +19,22 @@ const initState = {
     confirmPassword: ''
 };
 
+// interface formData {
+
+//   firstName: string,
+//   lastName: string,
+//   mobile: string,
+//   streetName: string,
+//   postalCode: string,
+//   city: string,
+//   email: string,
+//   password: string,
+//   confirmPassword: string
+// }
+
 const Registration: React.FC = () => {
     const navigate = useNavigate()
     const [formData, setFormData] = useState(initState);
-    // const { user  } = useSelector((state: RootState) => state.user) as {
-    //   user: string | null
-    // };
-
     const dispatch = useDispatch();
    
   const [error, setError] = useState({
@@ -124,7 +132,7 @@ const Registration: React.FC = () => {
     }
 
 
-    dispatch(createUser(formData))
+    dispatch(createUser(formData) as any)
     navigate('/login')
   };
 

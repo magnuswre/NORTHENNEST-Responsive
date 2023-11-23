@@ -42,24 +42,20 @@ const Login = () => {
           }
         
           try {
-            // Call the user login API
             const response = await userService.loginAsync(formData);
             console.log(formData)
 
-            // Assuming your login API returns a user object with a token property
             if (response.token) {
-                // Store the token in localStorage or session storage
                localStorage.setItem('user-token', response.token);
                console.log("response.token,", response.token)
-                // Redirect to a protected route or perform other actions upon successful login
                 navigate('/profile');
             } else {
                 console.error('Token not found in the response body');
             }
         } catch (error) {
-            console.error('Error during login:', error.message);
-        }
+            throw new Error('Login failed')
     }
+}
    
 
     return (

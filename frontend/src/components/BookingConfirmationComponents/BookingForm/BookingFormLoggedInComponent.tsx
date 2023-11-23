@@ -23,7 +23,20 @@ const initState = {
   paymentMethod: 'visa/mastercard'
 };
 
-const BookingFormLoggedInComponent = ({ userData }) => {
+interface UserData {
+  _id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  mobile: string;
+  // Add other fields as needed
+}
+
+interface BookingFormProps {
+  userData: UserData;
+}
+
+const BookingFormLoggedInComponent: React.FC<BookingFormProps> = ({ userData }) => {
   const isMobile = useMediaQuery({ maxWidth: 1000 });
 
   console.log(userData)

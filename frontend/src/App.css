@@ -8,6 +8,8 @@ a{
 p{
   font-size: 16px;
 }
+
+
 @media (min-width: 1000px) and (max-width: 2000px) {
   .Page-Content {
     max-width: 1200px;

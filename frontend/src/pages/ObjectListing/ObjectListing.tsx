@@ -39,7 +39,7 @@ const ObjectListing = () => {
                     <div className='RentalObject-Bottom-Content'>
                       <p className='RentalObject-Description'>{rentalObject.description} </p>
                       <div className='RentalObject-Bottom-Living-Bedroom'>
-                        <p className='RentalObject-Livingarea Bold-Text'>{rentalObject.livingarea} m2, </p>
+                        <p className='RentalObject-Livingarea Bold-Text'>{rentalObject.livingarea} m2,&nbsp; </p>
                         <p className='RentalObject-Bedrooms Bold-Text'>{rentalObject.bedrooms} bedrooms </p>
                       </div>
                       <div className='RentalObject-Starrating-ViewBtn'>

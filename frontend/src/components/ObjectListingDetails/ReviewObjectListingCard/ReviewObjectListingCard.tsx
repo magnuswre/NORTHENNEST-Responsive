@@ -8,8 +8,9 @@ const ReviewObjectListingCard = () => {
      
   return (
     <div>
-      {isMobile ? <div className="ReviewObjectListingCard-container">
-        <h2>Reviews</h2>
+      {isMobile ? 
+       <div className="ReviewObjectListingCard-container">
+        <h3>Reviews</h3>
         <div className="ReviewObjectListingCard-content">
         <ReviewObjectListingCardDetails />
         <ReviewObjectListingCardDetails />

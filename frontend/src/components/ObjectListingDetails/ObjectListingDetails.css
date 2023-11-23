@@ -7,6 +7,7 @@
 .Reservation-Info-Area {
    height: 115px;
    /* border: 1px solid; */
+   /* position: relative; */
 }
 
 .Reservation-Info-Area-Title{
@@ -33,15 +34,18 @@ li::marker {
 
 .ObjectListingDetails-Facilities-Container {
    margin: 0 auto;
-   display: grid;
-   place-items: center;
-   width: 342px;
+   margin-top: 15px;
+   /* display: grid; */
+   /* place-items: center; */
+   width: 90%;
    /* border: 1px solid; */
    font-family: Lora;
 
 }
 
 .ObjectListingDetails-Facilities-Content {
+   margin-top: 15px;
+   margin-bottom: 15px;
    display: grid;
    grid-template-columns: repeat(2, 1fr);
    gap: 16px;
@@ -53,6 +57,12 @@ li::marker {
    font-family: Lora;
 }
 
+.ObjectListingDetails-Included-Info-Container{
+   margin: 0 auto;
+   margin-top: 15px;
+   /* border: 1px solid; */
+   width: 90%;
+}
 /* .ObjectListingDetails-Facilities-Content img{
     padding: 5px;
  } */

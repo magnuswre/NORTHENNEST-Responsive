@@ -1,7 +1,8 @@
 .PaymentConfirmation-Container{
     margin: 0 auto;
     width: 350px;
-    background-color: #F0F0F0;
+    background-color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     text-align: center;
     margin-bottom: 35px;
     border-radius: 10px;
@@ -40,5 +41,62 @@
 }
 
 .PaymentConfirmation-Email-Container{
+    margin-bottom: 5%;
+}
+
+/* DESKTOP */
+
+.PaymentConfirmation-Container-Desktop{
+    margin: 0 auto;
+    width: 80%;
+    height: 100vh;
+    /* border: 1px solid; */
+   
+    /* display: grid; */
+}
+
+.Bold-Desktop{
+    font-weight: 700;
+}
+.PaymentConfirmation-Content-Desktop{
+    /* display: grid; */
+    /* place-items: center; */
+    background-color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    text-align: center;
+    margin-bottom: 35px;
+    border-radius: 10px;
+    font-family: Lora;
+    /* height: 50%; */
+    /* margin-top: 1%; */
+    /* border: 1px solid; */
+    /* margin-bottom: 10%; */
+    /* border: 1px solid gold; */
+
+}
+
+.PaymentConfirmation-top-field-Desktop{
+    border-radius: 10px 10px 0 0;
+    height: 35px;
+    background-color: #486349;
+    margin-top: 35px;
+    /* border: 2px solid; */
+}
+
+.PaymentConfirmation-Checkicon-Desktop{
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+.PaymentConfirmation-Amount-Container-Desktop, .PaymentConfirmation-Booking-Reference-Container-Desktop, .PaymentConfirmation-Email-Container-Desktop{
+    display: flex;
+    /* flex-direction: column; */
+    display: inline-block;
+    width: 100%;
+    margin-top: 4%;
+    /* border: 1px solid; */
+}
+
+.PaymentConfirmation-Email-Container-Desktop{
     margin-bottom: 5%;
 }

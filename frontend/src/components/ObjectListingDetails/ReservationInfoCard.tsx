@@ -23,13 +23,12 @@ const ReservationInfoCard = () => {
 
   const handleReserveClick = () => {
     navigate(`/bookingalternative/${id}`)
-    // navigate(`/order/${id}`);
     localStorage.setItem('totalPrice', totalCost.toString());
   };
 
 
   return (
-    <div>
+    <div className='ReservationInfoCard-Wrapper-Mobile'>
       {isMobile ?
         <div className="ReservationInfoCard-Container">
           <div className="ReservationInfoCard-Details">
