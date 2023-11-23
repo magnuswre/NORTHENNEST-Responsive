@@ -1,14 +1,4 @@
-// import { RentalObject } from "src/types/Product";
-
-const API_BASE_URL = 'http://localhost:8080/api/rentalobject/';
-
-// const getAllAsync = async (): RentalObject[] =>  
-
-// const getAllAsync = async () => {     
-//     const res = await fetch(API_BASE_URL);
-//     if (!res.ok) throw new Error('Something went wrong when getting all the rentalObjects');
-//     return res.json();
-// }
+const API_BASE_URL = 'http://localhost:8081/api/rentalobject/';
 
 const getAllAsync = async (category: string) => {
     const res = await fetch(API_BASE_URL + `?category=${category}`);

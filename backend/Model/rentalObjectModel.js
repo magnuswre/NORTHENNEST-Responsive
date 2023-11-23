@@ -57,7 +57,7 @@ exports.getAllRentalObjects = async (req, res) => {
 
 exports.getRentalObjectById = async (req, res) => {
 
-    const _rentalObject = await RentalObject.findById(req.params.id)
+    const _rentalObject = await RentalObject.findById(req.params.id).populate("facilities")
 
     if (!_rentalObject) {
         return res.status(404).json({ message: 'Could not find the rentalObject' })

@@ -5,9 +5,9 @@ const packageSchema = new Schema({
   name:         {type: String, required: true},
   description:  {type: String, required: true},
   imageURL:     {type: String, required: true},
-  budget:       {type: String, required: true},
-  standard:     {type: String, required: true},
-  deluxe:       {type: String, required: true},
+  budget:       {type: String},
+  standard:     {type: String},
+  deluxe:       {type: String},
   tags:         {type: String}
 },
 {

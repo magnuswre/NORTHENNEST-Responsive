@@ -15,8 +15,37 @@ export const getAllFacilities = createAsyncThunk('rentalObjects/loadrentalObject
     }
 }) 
 
+// export const selectFacilitiesByCategory = (state, category) => {
+//   console.log(state, category)
+// // Check if state.facilities is defined
+// if (state.facilities) {
+//   // Check if state.facilities is an array
+//   if (Array.isArray(state.facilities)) {
+//     return state.facilities.filter((facility) => {
+//       const matchingCategory = facility.categories.find(
+//         (cat) => cat.name.toLowerCase() === category.toLowerCase()
+//       );
+//       return !!matchingCategory;
+//     });
+//   }
+
+//   // If state.facilities is an object, assume it has a 'text' property
+//   if (state.facilities.text) {
+//     return state.facilities.text.filter((facility) => {
+//       const matchingCategory = facility.categories.find(
+//         (cat) => cat.name.toLowerCase() === category.toLowerCase()
+//       );
+//       return !!matchingCategory;
+//     });
+//   }
+// }
+
+// // Return an empty array if state.facilities is not defined or doesn't have a 'text' property
+// return [];
+// };
+
 export const facilitiesSlice = createSlice({
-  name: 'rentalObjects',
+  name: 'facilities',
   initialState,
   reducers: {},
   extraReducers: (builder) => {

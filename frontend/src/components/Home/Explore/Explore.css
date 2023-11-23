@@ -5,3 +5,14 @@
     place-items: center;
     height: 40px;
 }
+
+/* DESKTOP */
+
+.Home-Explore-Activities-Desktop{
+    margin: 0 auto;
+    margin-top: 45px;
+    display: grid;
+    place-items: center;
+    height: 40px;
+    margin-bottom: 45px;
+}

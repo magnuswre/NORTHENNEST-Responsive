@@ -5,7 +5,7 @@ const auth = require('../authentication/auth')
 router.post('/add', facilityModel.createNewFacility)
 router.get('/', facilityModel.getAllFacilities)
 router.get('/:id', facilityModel.getFacilityById)
-router.put('/:id', facilityModel.uppdateFacility)
+router.put('/:id', facilityModel.updateFacility)
 router.delete('/:id', facilityModel.deleteFacility)
 
 

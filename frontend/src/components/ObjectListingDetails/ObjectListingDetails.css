@@ -91,9 +91,12 @@ li::marker {
 /* DESKTOP */
 
 .Desktop-RentalObject-Details-Image {
-   height: 840px;
+   height: 400px;
    width: 100%;
    object-fit: cover;
+   /* margin: 0 auto; */
+
+   margin-top: 25px;
 }
 
 .ObjectListingDetails-Facilities-Container-Desktop {

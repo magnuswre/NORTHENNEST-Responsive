@@ -15,9 +15,11 @@ const ObjectListing = () => {
   const dispatch = useDispatch();
   const category = useParams().category || "";
   const StarIcon = ({ filled }: { filled: boolean }) => (filled ? <FaStar className="star" /> : <FaRegStar className="star" />);
-
+  
   useEffect(() => {
     dispatch(getAllRentalObjectsByCategory(category) as any);
+    localStorage.setItem('selectedCategory', category);
+    console.log(category)
   }, [category, dispatch]);
 
   return (
@@ -84,7 +86,7 @@ const ObjectListing = () => {
 
                     <div className='RentalObject-Right-Content-Desktop'>
                       <div className='RentalObject-Right-Content-Desktop-Top'>
-                        <p className='RentalObject-Price-Desktop'><span><span className='Bold-Text'>{rentalObject.price}</span>  SEK per night</span></p>
+                        <p className='RentalObject-Price-Desktop'><span><span className='Bold-Text-Desktop'>{rentalObject.price}</span>  SEK per night</span></p>
                         <button className='RentalObject-Save-Btn-Desktop'><img src={HeartIcon} alt="Save" /></button>
                       </div>
                       <div className='RentalObject-Description-Desktop'>

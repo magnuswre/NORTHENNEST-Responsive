@@ -221,3 +221,7 @@
     border: none;
     background-color: white;
 }
+
+.Bold-Text-Desktop{
+    font-weight: 700;
+  }

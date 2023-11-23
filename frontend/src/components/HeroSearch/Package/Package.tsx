@@ -67,18 +67,36 @@ const Package = () => {
           {/* <img src={chevronBottom} alt="" /> */}
         </div>
       </div>
-      <div ref={refOne} className='Drop-Down-Packages-Content-Wrapper'>
+      <div>
+        {isMobile ? 
+        <div ref={refOne} className='Drop-Down-Packages-Content-Wrapper'>
         {open && (
           <>
             <div className='Drop-Down-Packages-Content'>
               <p className='Drop-Down-Packages-Item Packages-Item-Border' onClick={() => handlePackageSelect('All')}>All</p>
               <p className='Drop-Down-Packages-Item Packages-Item-Border' onClick={() => handlePackageSelect('Budget')}>Budget</p>
               <p className='Drop-Down-Packages-Item Packages-Item-Border' onClick={() => handlePackageSelect('Standard')}>Standard</p>
-              <p className='Drop-Down-Packages-Item' onClick={() => handlePackageSelect('Deluxe')}>Deluxe</p>
+              <p className='Drop-Down-Packages-Item Packages-Item-Border' onClick={() => handlePackageSelect('Deluxe')}>Deluxe</p>
             </div>
           </>
         )}
       </div>
+        : 
+        <div ref={refOne} className='Drop-Down-Packages-Content-Wrapper-Desktop'>
+        {open && (
+          <>
+            <div className='Drop-Down-Packages-Content-Desktop'>
+              <p className='Drop-Down-Packages-Item Packages-Item-Border-Desktop' onClick={() => handlePackageSelect('All')}>All</p>
+              <p className='Drop-Down-Packages-Item Packages-Item-Border-Desktop' onClick={() => handlePackageSelect('Budget')}>Budget</p>
+              <p className='Drop-Down-Packages-Item Packages-Item-Border-Desktop' onClick={() => handlePackageSelect('Standard')}>Standard</p>
+              <p className='Drop-Down-Packages-Item Packages-Item-Border-Desktop' onClick={() => handlePackageSelect('Deluxe')}>Deluxe</p>
+            </div>
+          </>
+        )}
+      </div>
+        }
+      </div>
+      
       <div>
 
         {isMobile ? 

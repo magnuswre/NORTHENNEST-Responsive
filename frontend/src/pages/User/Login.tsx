@@ -60,9 +60,9 @@ const Login = () => {
 
     return (
 
-        <div className='create-form'>
-            <p className='form-text'>Welcome! Login To Your Account</p>
-            <form onSubmit={handleSubmit}>
+        <div className='Registration-create-form'>
+            <p className='Registration-form-text'>Welcome! Login To Your Account</p>
+            <form className='Login-Form' onSubmit={handleSubmit}>
                 <div className='form-group'>
                     <label htmlFor="email">Email*</label>
                     <input type="email" name='email' className='input' id='email' value={formData.email} onChange={handleChange} />
@@ -73,7 +73,7 @@ const Login = () => {
                     <input type="password" name='password' className='input' id='password' value={formData.password} onChange={handleChange} />
                     <p className="error-text">{error2.password}</p> 
                 </div>
-                <button className='button'>Submit</button>
+                <button className='Registration-btn'>Submit</button>
                     <p className='red-text' >
                         <Link className='error-text' to={'/register'}>Don't have an Account yet?</Link>
                     </p>

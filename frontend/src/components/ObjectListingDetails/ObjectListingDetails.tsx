@@ -4,10 +4,10 @@ import { useParams } from 'react-router-dom';
 import { RootState } from 'src/app/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRentalObjectById } from '../../features/rentalObject/rentalObjectSlice';
-import { getAllFacilities } from '../../features/facility/facilitiesSlice';
 import ReviewObjectListingCard from './ReviewObjectListingCard/ReviewObjectListingCard';
 import ReservationInfoCard from './ReservationInfoCard';
 
+// Facilities icons
 import kitchen from '../../assets/facilitiesIcons/kitchen.svg'
 import kingsizebed from '../../assets/facilitiesIcons/kingsizebed.svg';
 import petsallowed from '../../assets/facilitiesIcons/petsallowed.svg'
@@ -20,11 +20,11 @@ import tv from '../../assets/facilitiesIcons/tv.svg'
 import washingmachine from '../../assets/facilitiesIcons/washingmachine.svg'
 import wifi from '../../assets/facilitiesIcons/Wifi.svg'
 import beddings from '../../assets/facilitiesIcons/bedding.svg'
-
+// import sauna from '../../assets/facilitiesIcons/sauna.svg'
+// import breakfast from '../../assets/facilitiesIcons/R.png'
+//
 import { useMediaQuery } from 'react-responsive';
 import { ObjectListingDetailsCarousel } from './ObjectListingDetailsCarousel/ObjectListingDetailsCarousel';
-
-
 
 interface Facility {
   _id: string;
@@ -34,22 +34,47 @@ interface Facility {
 
 const ObjectListingDetails = () => {
   const isMobile = useMediaQuery({ maxWidth: 1000 });
+
   const { id } = useParams();
   const dispatch = useDispatch();
   const { rentalObject, loading, error } = useSelector((state: RootState) => state.rentalObject) as {
-    rentalObject: { name: string, imageURL: string, RentalObjectPackage: string[], price: number } | null;
+    rentalObject: {
+      name: string,
+      imageURL: string,
+      RentalObjectPackage:
+      string[],
+      price: number,
+      category: string,
+      facilities: string
+    } | null;
     loading: boolean;
     error: string | null;
   };
+  
+  const [testfacilities, setTestFacilities] = useState<Facility[]>([]);
+ 
+
+  useEffect(() => {
+    console.log(rentalObject)
+    const rentalObjectFacilities = rentalObject?.facilities[0].categories[0].facilities
+    console.log(rentalObjectFacilities);
+    setTestFacilities(rentalObjectFacilities)
+
+
+  },[])
+
+  console.log(testfacilities);
+
+
   const pricePerNight = rentalObject?.price;
-  const [facilities, setFacilities] = useState<Facility[]>([]);
+
   useEffect(() => {
     if (pricePerNight != null) {
       console.log('Setting pricePerNight in localStorage:', pricePerNight);
       localStorage.setItem('pricePerNight', pricePerNight.toString());
     }
   }, [pricePerNight]);
-  console.log(facilities)
+
   useEffect(() => {
     if (id) {
       const fetchRentalObjectData = async () => {
@@ -61,18 +86,6 @@ const ObjectListingDetails = () => {
   }, [id, dispatch]);
 
 
-  useEffect(() => {
-    const fetchFacilities = async () => {
-      if (rentalObject) {
-        const facilityResponse = await dispatch(getAllFacilities() as any);
-        if (!facilityResponse.error) {
-          setFacilities(facilityResponse.payload);
-        }
-      }
-    };
-
-    fetchFacilities();
-  }, [rentalObject, dispatch]);
 
   if (error) {
     return (
@@ -93,7 +106,9 @@ const ObjectListingDetails = () => {
     tv,
     washingmachine,
     wifi,
-    beddings
+    beddings,
+    // sauna,
+    // breakfast
   } as { [key: string]: string };
 
 
@@ -115,20 +130,22 @@ const ObjectListingDetails = () => {
           <div className='ObjectListingDetails-Facilities-Container'>
             <h3>Facilities</h3>
             <div className='ObjectListingDetails-Facilities-Content'>
-              {facilities.length > 0 ? (
-                facilities.map((facility) => (
+              {/* {testfacilities.length > 0 ? (
+                testfacilities.map((facility) => (
                   <div className='ObjectListingDetails-Text-And-Icons' key={facility._id}>
                     <img
                       src={iconMap[facility.iconText ?? '']}
                       alt={''}
                       className='Facility-Icon'
                     />
-                    <p className='ObjectListingDetails-Facilities-Text' ><span className='ObjectListingDetails-Facilities-Text-Details'>{facility.text}</span></p>
+                    <p className='ObjectListingDetails-Facilities-Text'>
+                      <span className='ObjectListingDetails-Facilities-Text-Details'>{facility.text}</span>
+                    </p>
                   </div>
                 ))
               ) : (
                 <h2>No Facilities to show</h2>
-              )}
+              )} */}
             </div>
           </div>
 
@@ -162,7 +179,6 @@ const ObjectListingDetails = () => {
           {rentalObject ? (
             <div>
               <img className='Desktop-RentalObject-Details-Image' src={rentalObject.imageURL} alt="" />
-              {/* <p> {rentalObject.price}</p> */}
             </div>
           ) : (
             <div>
@@ -176,8 +192,8 @@ const ObjectListingDetails = () => {
           <div className='ObjectListingDetails-Facilities-Container-Desktop'>
             <h2>Facilities</h2>
             <div className='ObjectListingDetails-Facilities-Content-Desktop'>
-              {facilities.length > 0 ? (
-                facilities.map((facility) => (
+              {/* {testfacilities.length > 0 ? (
+                testfacilities.map((facility) => (
                   <div className='ObjectListingDetails-Text-And-Icons' key={facility._id}>
                     <img
                       src={iconMap[facility.iconText ?? '']}
@@ -189,7 +205,7 @@ const ObjectListingDetails = () => {
                 ))
               ) : (
                 <h2>No Facilities to show</h2>
-              )}
+              )} */}
 
               {/* RESERVATION CARD in desktop version */}
               <div className='Reservation-Info-Area-Desktop'>
