@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getRentalObjectById } from '../../features/rentalObject/rentalObjectSlice';
 import ReviewObjectListingCard from './ReviewObjectListingCard/ReviewObjectListingCard';
 import ReservationInfoCard from './ReservationInfoCard';
+import TempoComp from '../temporaryComponent/tempoComp';
 
 // Facilities icons
 import kitchen from '../../assets/facilitiesIcons/kitchen.svg'
@@ -51,19 +52,17 @@ const ObjectListingDetails = () => {
     error: string | null;
   };
   
-  const [testfacilities, setTestFacilities] = useState<Facility[]>([]);
+  // const [testfacilities, setTestFacilities] = useState<Facility[]>([]);
  
 
-  useEffect(() => {
-    console.log(rentalObject)
-    const rentalObjectFacilities = rentalObject?.facilities[0].categories[0].facilities
-    console.log(rentalObjectFacilities);
-    setTestFacilities(rentalObjectFacilities)
+  // useEffect(() => {
+  //   console.log(rentalObject)
+  //   const rentalObjectFacilities = rentalObject?.facilities[0].categories[0]
+  //   console.log(rentalObjectFacilities);
+  //   setTestFacilities(rentalObjectFacilities)
+  // },[])
 
-
-  },[])
-
-  console.log(testfacilities);
+  // console.log(testfacilities);
 
 
   const pricePerNight = rentalObject?.price;
@@ -129,6 +128,8 @@ const ObjectListingDetails = () => {
           )}
           <div className='ObjectListingDetails-Facilities-Container'>
             <h3>Facilities</h3>
+               <TempoComp />
+          
             <div className='ObjectListingDetails-Facilities-Content'>
               {/* {testfacilities.length > 0 ? (
                 testfacilities.map((facility) => (
@@ -145,7 +146,8 @@ const ObjectListingDetails = () => {
                 ))
               ) : (
                 <h2>No Facilities to show</h2>
-              )} */}
+              )}  */}
+              
             </div>
           </div>
 
@@ -192,7 +194,9 @@ const ObjectListingDetails = () => {
           <div className='ObjectListingDetails-Facilities-Container-Desktop'>
             <h2>Facilities</h2>
             <div className='ObjectListingDetails-Facilities-Content-Desktop'>
-              {/* {testfacilities.length > 0 ? (
+            <TempoComp />
+
+               {/* {testfacilities.length > 0 ? (
                 testfacilities.map((facility) => (
                   <div className='ObjectListingDetails-Text-And-Icons' key={facility._id}>
                     <img
@@ -204,15 +208,16 @@ const ObjectListingDetails = () => {
                   </div>
                 ))
               ) : (
-                <h2>No Facilities to show</h2>
-              )} */}
+                <h3>No Facilities to show</h3>
+              )}  */}
 
-              {/* RESERVATION CARD in desktop version */}
+
+ {/* RESERVATION CARD in desktop version */}
               <div className='Reservation-Info-Area-Desktop'>
-                <ReservationInfoCard />
               </div>
             </div>
           </div>
+                <ReservationInfoCard />
 
 
           <div className='RentalObjectPackage-Desktop'>
@@ -225,7 +230,7 @@ const ObjectListingDetails = () => {
                   <li className='RentalObjectPackage-ListItem-Desktop' key={index}>{_package}</li>
                 ))
               ) : (
-                <h2>No packages to show</h2>
+                <h3>No packages to show</h3>
               )}
             </ul>
           </div>

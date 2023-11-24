@@ -124,6 +124,7 @@ const BookingFormComponent = () => {
         if (resultAction.payload && 'order' in resultAction.payload && '_id' in resultAction.payload.order) {
           const newOrderId = resultAction.payload.order._id;
           navigate(`/paymentconfirmation/${newOrderId}`);
+          localStorage.clear();
         } else {
           console.error('Order ID was not present in the response payload.');
         }

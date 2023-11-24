@@ -103,12 +103,13 @@ li::marker {
 
    margin: 0 auto;
    margin-top: 55px;
-   display: flex;
+   /* display: flex;
    flex-direction: column;
    align-items: start;
-   justify-content: start;
-   width: 75%;
+   justify-content: start;*/
+   width: 75%; 
    /* border: 2px solid; */
+   font-family: Lora;
    
 
 
@@ -117,7 +118,7 @@ li::marker {
 .ObjectListingDetails-Facilities-Content-Desktop {
    margin-top: 25px;
    display: grid;
-   grid-template-columns: repeat(2, 1fr);
+   /* grid-template-columns: repeat(2, 1fr); */
    gap: 30px;
    position: relative;
 
@@ -131,11 +132,19 @@ li::marker {
 
 }
 
+.RentalObjectPackage-Desktop h2 {
+    font-family: Lora;
+}
+
+
 .RentalObjectPackage-Desktop-UL-List {
    gap: 20px;
    display: grid;
    grid-template-columns: repeat(2, 2fr);
    width: 65%;
+   /* border: 1px solid; */
+   margin-top: 25px;
+   font-family: Lora;
 
 }
 
@@ -144,14 +153,14 @@ li::marker {
 } */
 
 /* This is inside the div -> ObjectListingDetails-Facilities-Content-Desktop (position: relative)  */
-.Reservation-Info-Area-Desktop{ 
+/* .Reservation-Info-Area-Desktop{ 
    position: absolute;
    right: -350px;
    top: 0;
    width: 400px;
    height: 260px;
    /* background-color: red; */
-}
+} */
 
 .Reservation-Info-Area-Desktop-ReservationInfoCard{
    

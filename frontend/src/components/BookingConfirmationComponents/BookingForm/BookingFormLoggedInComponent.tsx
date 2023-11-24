@@ -132,6 +132,7 @@ const BookingFormLoggedInComponent: React.FC<BookingFormProps> = ({ userData }) 
         if (resultAction.payload && 'order' in resultAction.payload && '_id' in resultAction.payload.order) {
           const newOrderId = resultAction.payload.order._id; // Extract the _id
           navigate(`/paymentconfirmation/${newOrderId}`); // Navigate using the _id
+          localStorage.clear();
         } else {
           console.error('Order ID was not present in the response payload.');
         }
