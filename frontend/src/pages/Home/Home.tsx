@@ -11,8 +11,6 @@ import Heading4 from '../../components/Home/Heading4/Heading4'
 import { MobileCarousel } from '../../components/Home/MobileCarousel/MobileCarousel'
 import { useMediaQuery } from 'react-responsive';
 
-// import StarRating from '../../components/StarRating/StarRating'
-
 const Home = () => {
   const isMobile = useMediaQuery({ maxWidth: 1000 });
 

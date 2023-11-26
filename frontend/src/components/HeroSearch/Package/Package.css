@@ -57,6 +57,15 @@
     color: #FFF;
 }
 
+.Drop-Down-Packages-Item:first-child:hover{
+    background-color: #555555;
+    border-radius: 15px 15px 0 0;
+}
+.Drop-Down-Packages-Item:last-child:hover{
+    background-color: #555555;
+    border-radius: 0 0 15px 15px;
+}
+
 .rdrDateDisplay{
     display: none !important;
 }

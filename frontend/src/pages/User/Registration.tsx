@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { createUser } from '../../features/user/userSlice';
 import { useDispatch } from 'react-redux';
-
 import './Registration.css'
 
-
-
-const initState = {
+const initState: RegisterFormdata = {
     firstName: '',
     lastName: '',
-    mobile: '',
+    mobile: 0,
     streetName: '',
     postalCode: '',
     city: '',
@@ -20,25 +16,16 @@ const initState = {
     confirmPassword: ''
 };
 
-// interface formData {
+interface RegisterFormProps {
+  RegisterFormdata: RegisterFormdata
+}
 
-//   firstName: string,
-//   lastName: string,
-//   mobile: string,
-//   streetName: string,
-//   postalCode: string,
-//   city: string,
-//   email: string,
-//   password: string,
-//   confirmPassword: string
-// }
-
-const Registration: React.FC = () => {
+const Registration: React.FC<RegisterFormProps> = () => {
     const navigate = useNavigate()
     const [formData, setFormData] = useState(initState);
     const dispatch = useDispatch();
    
-  const [error, setError] = useState({
+    const [error, setError] = useState<Record<keyof RegisterFormdata, string>>({
     firstName: '',
     lastName: '',
     streetName: '',
@@ -67,7 +54,16 @@ const Registration: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
   
-    const requiredFields = ['firstName', 'lastName', 'mobile', 'streetName', 'postalCode', 'city', 'email', 'password', 'confirmPassword'];
+    const requiredFields = [
+      'firstName', 
+      'lastName', 
+      'mobile', 
+      'streetName', 
+      'postalCode', 
+      'city', 
+      'email', 
+      'password', 
+      'confirmPassword'];
   
     const newErrorState: Record<string, string> = {};
   

@@ -46,10 +46,6 @@
     align-items: center;
 }
 
-/* .inputBoxCheckIn-container{
-    border-right: 1px solid #D1D1D1;
-} */
-
 #inputBoxCheckIn, #inputBoxCheckOut{
     width: 88px;
     height: 23px;
@@ -110,14 +106,5 @@
     #inputBoxCheckOut, #inputBoxCheckIn{
         background-color: #f1f1f1;
     }
-    
-    
-
-
-    /* #inputBoxCheckIn, #inputBoxCheckOut{
-        width: 253px;
-        height: 23px;
-        
-    } */
     
   }

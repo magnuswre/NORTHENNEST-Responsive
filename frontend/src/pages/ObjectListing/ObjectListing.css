@@ -5,7 +5,6 @@
 .Rental-Object-Listing{
     display: flex;
     flex-direction: column;
-    /* border: 1px solid; */
 }
 
 .Rental-Object-Listing-Details{
@@ -26,7 +25,6 @@
     width: 100%;
     height: 180px;
     object-fit: cover;
-
 }
 
 .RentalObject-Price{
@@ -55,7 +53,6 @@
     border-radius: 15px;
     fill: #FFF;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
 }
 
 .RentalObject-Bottom-Content{
@@ -68,23 +65,17 @@
     margin-top: 12px;
 }
 
-
-
 .RentalObject-Starrating-ViewBtn{
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 8px;
-    /* border: 1px solid; */
 }
 
 .RentalObject-Starrating-Container{
     display: flex;
-    /* border: 1px solid; */
-    
-    /* align-items: center; */
-
 }
+
 .RentalObject-Starrating-Container p{
     margin: auto 5px auto 0
 } 
@@ -124,7 +115,6 @@
     width: 100%;
     height: 330px;
     background-color: white;
-    /* fill: #FFF; */
     margin-top: 30px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); /* Apply drop shadow to the entire card */
 }
@@ -132,16 +122,10 @@
     width: 330px;
     height: 100%;
     object-fit: cover;
-    /* overflow: visible; */
     border-radius: 10px 0px 0px 10px;
-
-    /* border: 2px solid; */
-    
 }
 .Rental-Object-Listing-Desktop-Container{
     position: relative;
-   /* border: 2px solid; */
-    
 }
 
 .RentalObject-Category-Desktop{
@@ -156,7 +140,6 @@
     border-radius: 15px;
     fill: #FFF;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    
 }
 
 .RentalObject-View-Deal-Btn-Desktop{
@@ -166,42 +149,31 @@
     border: none;
     flex-shrink: 0;
     background-color: #D8C690;
-
-
 }
 .RentalObject-Right-Content-Desktop{
     margin: 0 auto;
     width: 67%;
     display: grid;
-    /* e-items: center; */
-    /* background-color: red; */
 }
 
 .RentalObject-Price-Desktop{
     display: grid;
     place-items: center;
-    /* position: abslute; */
-    /* top: 52%; */
-    /* left: 2%; */
     background-color: #FFFFFF;
     width: 160px;
     height: 30px;
     border-radius: 15px;
     fill: #FFF;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
 }
 
 .RentalObject-Description-Desktop{
-    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: start;
 }
 
 .RentalObject-Right-Content-Desktop-Top{
-    /* margin: 0 auto; */
-    /* width: 93%; */
     display: flex;
     align-items: center;
     justify-content: space-between;

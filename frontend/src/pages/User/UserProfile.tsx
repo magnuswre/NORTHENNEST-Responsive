@@ -21,8 +21,8 @@ const UserProfile = () => {
 
     if (token) {
       try {
-        const decodedToken = JSON.parse(atob(token.split('.')[1]));
-        const userId = decodedToken._id;
+        // const decodedToken = JSON.parse(atob(token.split('.')[1]));
+        // const userId = decodedToken._id;
 
         userService.getUserProfile()
           .then(data => {

@@ -24,8 +24,7 @@ const Navbar = () => {
         </div> :
 
         // NAVBAR AND HERO SEARCH IN DESKTOP VIEW - HOME 
-        < >
-
+        <>
           <div className='Desktop-Navbar'>
             <div className='Desktop-NavBar-Navbar'>
               <div>
@@ -40,7 +39,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className='Desktop-NavBar-Title'>
-              <h1>Explore our luxury & <br></br> 
+              <h1>Explore our luxury & <br></br>
                 romantic cabins for couples</h1>
             </div>
             <div className='Desktop-NavBar-HeroSearch'>

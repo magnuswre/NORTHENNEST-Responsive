@@ -15,7 +15,7 @@ export const getUserProfile = async () => {
         throw new Error('Failed to fetch user profile');
       }
       return await response.json();
-    } catch (error) {
+    } catch (error: any) {
       throw new Error(`Error in getUserProfile: ${error.message}`);
     }
   };
@@ -59,7 +59,7 @@ const createUserAsync = async (formData: string) => {
     return responseBody;
 }
 
-const loginAsync = async (formData : string) => {
+const loginAsync = async (formData : LoginFormdata) => {
     console.log(formData)
     const res = await fetch(API_BASE_URL + 'login', {
         method: 'POST',

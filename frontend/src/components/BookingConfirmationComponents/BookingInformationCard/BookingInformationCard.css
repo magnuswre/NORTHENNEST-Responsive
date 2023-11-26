@@ -1,29 +1,27 @@
-.BookinginformationCard-Container{
+.BookinginformationCard-Container {
     margin: 0 auto;
     margin-top: 5%;
     width: 90%;
     /* height: 452px; */
     /* border: 1px solid; */
-   background-color: white;
-   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-   font-family: Lora;
-   border-radius: 10px;
-   display: grid;
-   /* border: 1px solid; */
+    background-color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    font-family: Lora;
+    border-radius: 10px;
+    display: grid;
+    /* border: 1px solid; */
 }
 
-
-.BookinginformationCard-Content{
+.BookinginformationCard-Content {
     display: grid;
     margin: 8px
 }
 
-.BookinginformationCard-Content > * {
+.BookinginformationCard-Content>* {
     margin-bottom: 10px;
 }
 
-
-.Booking-information-Title{
+.Booking-information-Title {
     background-color: #486349;
     color: white;
     height: 35px;
@@ -31,51 +29,42 @@
     justify-content: flex-start;
     align-items: center;
     border-radius: 10px 10px 0 0;
-    
 }
 
-.Booking-information-Title-Value{
+.Booking-information-Title-Value {
     margin-left: 8px;
 }
 
-#Total-Cost-Border-Top{
+#Total-Cost-Border-Top {
     border-top: solid 1px #BEBEBE;
     margin-top: 7%;
-   
 }
 
-.Cancellation-Protection-Content{
+.Cancellation-Protection-Content {
     display: flex;
     align-items: center;
-    /* justify-content: space-around; */
 }
 
-.Cancellation-Protection-Content input{
+.Cancellation-Protection-Content input {
     margin-left: 10px;
-    /* justify-content: space-around; */
 }
-
-
 
 /* DESKTOP */
 
-.BookinginformationCard-Container-Desktop{
+.BookinginformationCard-Container-Desktop {
     margin: 0 auto;
     margin-top: 5%;
-    /* width: 350px; */
     width: 90%;
-    /* height: 452px; */
-    /* border: 1px solid; */
     background-color: white;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-   font-family: Lora;
-   border-radius: 10px;
-   display: grid;
-   
+    font-family: Lora;
+    border-radius: 10px;
+    display: grid;
+
 }
 
-#Total-Cost-Border-Top-Desktop{
+#Total-Cost-Border-Top-Desktop {
     border-top: solid 1px #BEBEBE;
-    margin-top: 1% ;
-   
+    margin-top: 1%;
+
 }
